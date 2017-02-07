@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BAD_MAE_1" xml:space="preserve">
+    <value>Your rank number is </value>
+  </data>
+  <data name="BAD_MAE_2" xml:space="preserve">
+    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 99, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
+  </data>
+  <data name="BAD_OKANE_1" xml:space="preserve">
+    <value>Your coins are set to </value>
+  </data>
+  <data name="BAD_OKANE_2" xml:space="preserve">
+    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 9999999, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
+  </data>
+  <data name="BAD_RANK_1" xml:space="preserve">
+    <value>Your level is </value>
+  </data>
+  <data name="BAD_RANK_2" xml:space="preserve">
+    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 50, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
+  </data>
+  <data name="BAD_SAZAE_1" xml:space="preserve">
+    <value>Your super sea snails are set to </value>
+  </data>
+  <data name="BAD_SAZAE_2" xml:space="preserve">
+    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 999, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
+  </data>
+  <data name="BAD_UDE_1" xml:space="preserve">
+    <value>Your rank is set to </value>
+  </data>
+  <data name="BAD_UDE_2" xml:space="preserve">
+    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 10 (S+), the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
+  </data>
+  <data name="CANNOT_REMOVE_JR_TEXT" xml:space="preserve">
+    <value>You cannot remove the Splattershot Jr.</value>
+  </data>
+  <data name="CONNECTION_FAILED_TEXT" xml:space="preserve">
+    <value>Connection failed. Make sure that the provided IP address is correct and that TCPGecko is not being blocked by firewalls.</value>
+  </data>
+  <data name="EQUIPPED" xml:space="preserve">
+    <value>(EQUIPPED)</value>
+  </data>
+  <data name="FILL_IN_ALL_FIELDS_TEXT" xml:space="preserve">
+    <value>Please fill in all fields.</value>
+  </data>
+  <data name="FIND_DIFF_FAILED_TEXT" xml:space="preserve">
+    <value>Could not find the Splattershot Jr. in memory. Try using TCPGecko from loadiine.ovh. If that does not work, then the AIO may need to be updated for a new version of Splatoon.</value>
+  </data>
+  <data name="INVALID" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="INVALID_CLEAR_STATE" xml:space="preserve">
+    <value>Invalid clear state.</value>
+  </data>
+  <data name="INVALID_IP_TEXT" xml:space="preserve">
+    <value>An invalid IP address was provided.</value>
+  </data>
+  <data name="INVALID_LEVEL_NUMBER" xml:space="preserve">
+    <value>Invalid level number.</value>
+  </data>
+  <data name="LEVEL_ALREADY_ADDED_TEXT" xml:space="preserve">
+    <value>This level has already been added. If you wish to edit it, please right click it in the list.</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SELECT_TIMER_TYPE_TEXT" xml:space="preserve">
+    <value>Please select a timer type.</value>
+  </data>
+  <data name="SINGLE_PLAYER_RESET_TEXT" xml:space="preserve">
+    <value>Splat-AIO will reset all Octo Valley flags, removing all single player progress currently on your save file. Are you sure you want to continue?</value>
+  </data>
+  <data name="SINGLE_PLAYER_RESET_TITLE" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="VERSION_CHECK_FAILED_TEXT" xml:space="preserve">
+    <value>The AIO is incompatible with this version of Splatoon. If there is an update available, please download the new update to continue using the AIO.</value>
+  </data>
+  <data name="WEAPON_EXISTS_TEXT" xml:space="preserve">
+    <value>This weapon has already been added. If you wish to edit it, please right click it in the list.</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>
