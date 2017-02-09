@@ -58,5 +58,5 @@ http://fizzystack.web.fc2.com/paintball.html
   
 ##Credits
 
-Most of the credit goes to Bkool999, the creator of the program, and implemented all the octoling hacks. The credit also goes to Yahya14 for coding the program, and Seressa and OatmealDome for their Splat AIO 2 for the base of the program.
+Most of the credit goes to Bkool999, the creator of the program, and implemented all the octoling hacks. The credits also goes to Yahya14 for the coding, and Seressa and OatmealDome for their Splat AIO 2 for the base of the program.
 
