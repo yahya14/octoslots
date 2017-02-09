@@ -277,7 +277,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="checkBoxP3.Text" xml:space="preserve">
     <value>  Player 3</value>
@@ -310,7 +310,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP5.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="checkBoxP5.Text" xml:space="preserve">
     <value>  Player 5</value>
@@ -409,7 +409,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="checkBoxP1.Text" xml:space="preserve">
     <value>  Player 1</value>
@@ -445,7 +445,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="checkBoxP2.Text" xml:space="preserve">
     <value>  Player 2</value>
@@ -478,7 +478,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP4.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="checkBoxP4.Text" xml:space="preserve">
     <value>  Player 4</value>
@@ -511,7 +511,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP6.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="checkBoxP6.Text" xml:space="preserve">
     <value>  Player 6</value>
@@ -544,7 +544,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP7.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="checkBoxP7.Text" xml:space="preserve">
     <value>  Player 7</value>
@@ -577,7 +577,7 @@
     <value>249, 29</value>
   </data>
   <data name="checkBoxP8.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="checkBoxP8.Text" xml:space="preserve">
     <value>  Player 8</value>
@@ -619,13 +619,13 @@
     <value>20</value>
   </data>
   <data name="modeComboBox.Items" xml:space="preserve">
-    <value>Squad Battle</value>
-  </data>
-  <data name="modeComboBox.Items1" xml:space="preserve">
     <value>Turf/Ranked Battle</value>
   </data>
+  <data name="modeComboBox.Items1" xml:space="preserve">
+    <value>Classic Offsets</value>
+  </data>
   <data name="modeComboBox.Items2" xml:space="preserve">
-    <value>Private Battle</value>
+    <value>Idle (cease func.)</value>
   </data>
   <data name="modeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 71</value>
@@ -634,7 +634,7 @@
     <value>117, 21</value>
   </data>
   <data name="modeComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>2</value>
   </data>
   <data name="modeComboBox.Text" xml:space="preserve">
     <value>Turf/Ranked Battle</value>
@@ -681,6 +681,39 @@
   <metadata name="toolTipP1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>153, 18</value>
   </metadata>
+  <data name="mainPlayerPokeCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mainPlayerPokeCheck.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="mainPlayerPokeCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 119</value>
+  </data>
+  <data name="mainPlayerPokeCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="mainPlayerPokeCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="mainPlayerPokeCheck.Text" xml:space="preserve">
+    <value>Auto-poke main player</value>
+  </data>
+  <data name="mainPlayerPokeCheck.ToolTip" xml:space="preserve">
+    <value>Select the right mode for this to work</value>
+  </data>
+  <data name="&gt;&gt;mainPlayerPokeCheck.Name" xml:space="preserve">
+    <value>mainPlayerPokeCheck</value>
+  </data>
+  <data name="&gt;&gt;mainPlayerPokeCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainPlayerPokeCheck.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainPlayerPokeCheck.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="toggleGenderButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -694,7 +727,7 @@
     <value>117, 21</value>
   </data>
   <data name="toggleGenderButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="toggleGenderButton.Text" xml:space="preserve">
     <value>Toggle all slots</value>
@@ -721,7 +754,7 @@
     <value>116, 17</value>
   </data>
   <data name="sfxNormalRadio.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>5</value>
   </data>
   <data name="sfxNormalRadio.Text" xml:space="preserve">
     <value>Normal Octoling sfx</value>
@@ -745,7 +778,7 @@
     <value>104, 24</value>
   </data>
   <data name="sfxEliteRadio.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="sfxEliteRadio.Text" xml:space="preserve">
     <value>Elite Octoling sfx</value>
@@ -772,7 +805,7 @@
     <value>104, 24</value>
   </data>
   <data name="sfxCombineRadio.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="sfxCombineRadio.Text" xml:space="preserve">
     <value>Combine sfx</value>
@@ -799,7 +832,7 @@
     <value>308, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>16</value>
   </data>
   <data name="menuStrip1.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -821,36 +854,6 @@
   </data>
   <data name="singlePlayerToolStripMenuItem.Text" xml:space="preserve">
     <value>Single Player</value>
-  </data>
-  <data name="mainPlayerPokeCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="mainPlayerPokeCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 119</value>
-  </data>
-  <data name="mainPlayerPokeCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 17</value>
-  </data>
-  <data name="mainPlayerPokeCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="mainPlayerPokeCheck.Text" xml:space="preserve">
-    <value>Auto-poke main player slot</value>
-  </data>
-  <data name="mainPlayerPokeCheck.ToolTip" xml:space="preserve">
-    <value>Select the right mode for this to work</value>
-  </data>
-  <data name="&gt;&gt;mainPlayerPokeCheck.Name" xml:space="preserve">
-    <value>mainPlayerPokeCheck</value>
-  </data>
-  <data name="&gt;&gt;mainPlayerPokeCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainPlayerPokeCheck.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainPlayerPokeCheck.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

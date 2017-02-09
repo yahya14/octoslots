@@ -50,13 +50,13 @@
             this.modeComboBox = new System.Windows.Forms.ComboBox();
             this.modeLabel = new System.Windows.Forms.Label();
             this.toolTipP1 = new System.Windows.Forms.ToolTip(this.components);
+            this.mainPlayerPokeCheck = new System.Windows.Forms.CheckBox();
             this.toggleGenderButton = new System.Windows.Forms.Button();
             this.sfxNormalRadio = new System.Windows.Forms.RadioButton();
             this.sfxEliteRadio = new System.Windows.Forms.RadioButton();
             this.sfxCombineRadio = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainPlayerPokeCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             // 
             // autoRefreshTimer
             // 
-            this.autoRefreshTimer.Interval = 1200;
+            this.autoRefreshTimer.Interval = 1250;
             this.autoRefreshTimer.Tick += new System.EventHandler(this.autoRefreshTimer_Tick);
             // 
             // checkBoxP3
@@ -104,7 +104,6 @@
             this.checkBoxP3.ForeColor = System.Drawing.Color.White;
             this.checkBoxP3.Name = "checkBoxP3";
             this.checkBoxP3.UseVisualStyleBackColor = false;
-            this.checkBoxP3.CheckedChanged += new System.EventHandler(this.checkBoxP3_CheckedChanged);
             this.checkBoxP3.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP5
@@ -114,7 +113,6 @@
             this.checkBoxP5.ForeColor = System.Drawing.Color.White;
             this.checkBoxP5.Name = "checkBoxP5";
             this.checkBoxP5.UseVisualStyleBackColor = false;
-            this.checkBoxP5.CheckedChanged += new System.EventHandler(this.checkBoxP5_CheckedChanged);
             this.checkBoxP5.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // creditLabel
@@ -135,7 +133,6 @@
             this.checkBoxP1.Name = "checkBoxP1";
             this.toolTipP1.SetToolTip(this.checkBoxP1, resources.GetString("checkBoxP1.ToolTip"));
             this.checkBoxP1.UseVisualStyleBackColor = false;
-            this.checkBoxP1.CheckedChanged += new System.EventHandler(this.checkBoxP1_CheckedChanged);
             this.checkBoxP1.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP2
@@ -145,7 +142,6 @@
             this.checkBoxP2.ForeColor = System.Drawing.Color.White;
             this.checkBoxP2.Name = "checkBoxP2";
             this.checkBoxP2.UseVisualStyleBackColor = false;
-            this.checkBoxP2.CheckedChanged += new System.EventHandler(this.checkBoxP2_CheckedChanged);
             this.checkBoxP2.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP4
@@ -155,7 +151,6 @@
             this.checkBoxP4.ForeColor = System.Drawing.Color.White;
             this.checkBoxP4.Name = "checkBoxP4";
             this.checkBoxP4.UseVisualStyleBackColor = false;
-            this.checkBoxP4.CheckedChanged += new System.EventHandler(this.checkBoxP4_CheckedChanged);
             this.checkBoxP4.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP6
@@ -165,7 +160,6 @@
             this.checkBoxP6.ForeColor = System.Drawing.Color.White;
             this.checkBoxP6.Name = "checkBoxP6";
             this.checkBoxP6.UseVisualStyleBackColor = false;
-            this.checkBoxP6.CheckedChanged += new System.EventHandler(this.checkBoxP6_CheckedChanged);
             this.checkBoxP6.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP7
@@ -175,7 +169,6 @@
             this.checkBoxP7.ForeColor = System.Drawing.Color.White;
             this.checkBoxP7.Name = "checkBoxP7";
             this.checkBoxP7.UseVisualStyleBackColor = false;
-            this.checkBoxP7.CheckedChanged += new System.EventHandler(this.checkBoxP7_CheckedChanged);
             this.checkBoxP7.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP8
@@ -185,7 +178,6 @@
             this.checkBoxP8.ForeColor = System.Drawing.Color.White;
             this.checkBoxP8.Name = "checkBoxP8";
             this.checkBoxP8.UseVisualStyleBackColor = false;
-            this.checkBoxP8.CheckedChanged += new System.EventHandler(this.checkBoxP8_CheckedChanged);
             this.checkBoxP8.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // playerPicBox
@@ -216,6 +208,14 @@
             this.toolTipP1.BackColor = System.Drawing.Color.Transparent;
             this.toolTipP1.InitialDelay = 900;
             this.toolTipP1.ReshowDelay = 50;
+            // 
+            // mainPlayerPokeCheck
+            // 
+            resources.ApplyResources(this.mainPlayerPokeCheck, "mainPlayerPokeCheck");
+            this.mainPlayerPokeCheck.Name = "mainPlayerPokeCheck";
+            this.toolTipP1.SetToolTip(this.mainPlayerPokeCheck, resources.GetString("mainPlayerPokeCheck.ToolTip"));
+            this.mainPlayerPokeCheck.UseVisualStyleBackColor = true;
+            this.mainPlayerPokeCheck.CheckedChanged += new System.EventHandler(this.mainPlayerPokeCheck_CheckedChanged);
             // 
             // toggleGenderButton
             // 
@@ -257,14 +257,6 @@
             this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
             resources.ApplyResources(this.singlePlayerToolStripMenuItem, "singlePlayerToolStripMenuItem");
             this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.singlePlayerToolStripMenuItem_Click);
-            // 
-            // mainPlayerPokeCheck
-            // 
-            resources.ApplyResources(this.mainPlayerPokeCheck, "mainPlayerPokeCheck");
-            this.mainPlayerPokeCheck.Name = "mainPlayerPokeCheck";
-            this.toolTipP1.SetToolTip(this.mainPlayerPokeCheck, resources.GetString("mainPlayerPokeCheck.ToolTip"));
-            this.mainPlayerPokeCheck.UseVisualStyleBackColor = true;
-            this.mainPlayerPokeCheck.CheckedChanged += new System.EventHandler(this.mainPlayerPokeCheck_CheckedChanged);
             // 
             // Form1
             // 

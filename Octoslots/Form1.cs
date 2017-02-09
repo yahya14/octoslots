@@ -18,7 +18,7 @@ namespace Octoslots
             InitializeComponent();
             FontConfig.PaintballFont();
 
-            //forces transparecy because it doesn't work natively over picture box. Quite gimmicky.
+            //small hack to force transparecy for the checkbox backgrounds on the interface
             checkBoxP1.Parent = playerPicBox;
             checkBoxP1.BackColor = Color.Transparent;
             checkBoxP1.Location = new Point(checkBoxP1.Location.X - 8, checkBoxP1.Location.Y - 138);
@@ -68,7 +68,7 @@ namespace Octoslots
         public bool combineBoth;
         public bool sendStats = false;
         public uint delayRead = 1337;
-        public uint mainNameDelay;
+        public uint mainNameDelay = 1337;
         public uint SquadAddr, OnlineAddr, PBAddr, FestAddr;
         public byte[] miiName;
 
@@ -86,6 +86,10 @@ namespace Octoslots
             Configuration.Load();
             ipBox.Text = Configuration.currentConfig.lastIp;
             this.Text += " (" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + ")";
+
+            //un-nullify names array
+            for (int i = 0; i < 8; i++)
+                name[i] = new byte[0];
         }
 
         private void IPBox_KeyDown(object sender, KeyEventArgs e) //User can press Enter to connect
@@ -144,10 +148,10 @@ namespace Octoslots
                 }
 
                 //base addresses
-                SquadAddr = 0x1D9B1C34 + diff;
-                PBAddr = 0x1D9B226C + diff;
-                OnlineAddr = 0x1CAFD9F0 + diff2;
-                //FestAddr = 0x1CAFD920 + diff2;
+                SquadAddr = 0x1D9B1C2C + diff;
+                PBAddr = 0x1D9B2260 + diff;
+                OnlineAddr = 0x1CAFD9E8 + diff2;
+                //FestAddr = 0x1CAFD918 + diff2;
 #if DEBUG
                 //for debuging do not remove
                 Console.WriteLine("Debugging Data (used for math):");
@@ -216,6 +220,7 @@ namespace Octoslots
             sfxNormalRadio.Enabled = true;
             sfxCombineRadio.Enabled = true;
             singlePlayerToolStripMenuItem.Enabled = true;
+            mainPlayerPokeCheck.Enabled = true;
         }
 
         public void hold()
@@ -236,6 +241,8 @@ namespace Octoslots
             sfxNormalRadio.Enabled = false;
             sfxCombineRadio.Enabled = false;
             singlePlayerToolStripMenuItem.Enabled = false;
+            mainPlayerPokeCheck.Enabled = false;
+
 
             SinglePlayerForm spf = new SinglePlayerForm();
             spf.CheckBoxChecked = false;
@@ -257,12 +264,22 @@ namespace Octoslots
             modeComboBox.SelectedIndexChanged -= new System.EventHandler(modeComboBox_SelectedIndexChanged);
         }
 
-        //TIMER FUNCTION, that runs at start and for as long as the connection is established. Stops when the program is disconnected
+        //TIMER FUNCTION; runs at start and stops upon disconnection
         private void autoRefreshTimer_Tick(object sender, EventArgs e)
         {
+            //syncs checks with the bool array
+            checkVerify();
+
+            //reads names to display them on the gui
+            getNames();
+
             //auto pokes main player when checked
             if (mainPlayerPokeCheck.Checked)
                 mainNameChecker();
+
+            //pokes single player genders for singleplayerform
+            if (SinglePlayerForm.canPoke == true)
+                SinglePlayerForm.singlePlayerPoke();
 
             //pokes gender 2 on checked players
             for (uint i = 0; i < 8; i++)
@@ -283,13 +300,6 @@ namespace Octoslots
                     sfxEliteRadio_CheckedChanged(sender, e);
                 }
             }
-
-            //pokes single player genders depending if they're enabled and which of them are selected
-            if (SinglePlayerForm.canPoke == true)
-                SinglePlayerForm.singlePlayerPoke();
-
-            //reads names to display them on the gui
-            getNames();
         }
 
         public void getNames()
@@ -297,22 +307,22 @@ namespace Octoslots
             //delayed timer note: every name validated has no delay, every name failed to validate will have delay based the value of the next line.
             if (delayRead >= 1) //change the delay here
             {
-                /*
-                if (modeComboBox.Text == "Squad Battle")
+                
+                if (modeComboBox.Text == "Squad Battle") //broken
                 {
                      nameDump(SquadAddr, 0x460, 0x9C);
                      if (!canName)
                      switchSquadAddr();
-                }*/
-                if (modeComboBox.Text == "Turf/Ranked Battle")
-                    nameDump(OnlineAddr, 0x460, 0x9C);
-                else if (modeComboBox.Text == "Private Battle")
+                }
+                else if (modeComboBox.Text == "Private Battle") //broken
                     nameDump(PBAddr, 0x460, 0x9C);
-                else if (modeComboBox.Text == "Squad Battle") //Offset names within range of 0x12. Originally "Classic". Changed to squad because squadAddr is unreliable.
-                    nameDump(0x12D1F336 + diff, 0x6FC, 0xFC);
-
-                //else if (modeComboBox.Text == "Splatfest Battle")
-                //nameDump(FestAddr, 0x460, 0x9C);
+                else if (modeComboBox.Text == "Splatfest Battle") //broken
+                nameDump(FestAddr, 0x460, 0x9C);
+                else if (modeComboBox.Text == "Turf/Ranked Battle")
+                    nameDump(OnlineAddr, 0x460, 0x9C);
+                else if (modeComboBox.Text == "Classic Offsets") //Offset names within range of 0x12. Originally "Classic". Changed to squad because squadAddr is unreliable.
+                    nameDump(0x12D1F32E + diff, 0x704, 0xFC);
+                //All broken addresses need pointers for it, which I have no possesion of yet.
             }
             else
                 delayRead++;
@@ -324,15 +334,15 @@ namespace Octoslots
             try
             {
                 //reads the first two names for name validation
-                if (!canName && modeComboBox.Text != "Squad Battle")
+                if (!canName && modeComboBox.Text != "Classic Offsets")
                 {
                     //NAME CHECKER
                     //define memory dump
-                    uint slength = length - (nameOffset * 5);
+                    uint slength = length - (nameOffset * 6);
                     MemoryStream small = new MemoryStream();
                     uint i = 256 - (256 - slength);
 
-                    //dumps data from memory
+                    //dumps data from memory of player 2 and 3
                     Gecko.Dump(address, address + slength, small);
 
                     //define dump to byte array
@@ -347,7 +357,7 @@ namespace Octoslots
                     delayRead = 0;
 
                 }
-                else if (modeComboBox.Text == "Squad Battle") //Squad Battle doesn't need checks
+                else if (modeComboBox.Text == "Classic Offsets") //Classic doesn't need checks
                     canName = true;
 
                 //if names validation is true, all names can be read and displayed on gui
@@ -381,7 +391,7 @@ namespace Octoslots
                             for (uint c = 0; c < 0x16; c += 2)
                             {
                                 uint l = i + c;
-                                if (playersArray[l] == 0 && playersArray[l + 1] == 0)
+                                if (playersArray[l + 8] == 0 && playersArray[l + 9] == 0)
                                 {
                                     nameLength = c;
                                     break;
@@ -390,7 +400,7 @@ namespace Octoslots
 
                             //clone the displayable name array before the first null byte
                             name[k] = new byte[nameLength];
-                            Array.Copy(playersArray, i, name[k], 0, nameLength);
+                            Array.Copy(playersArray, i + 8, name[k], 0, nameLength);
                             k++;
                         }
 
@@ -398,7 +408,7 @@ namespace Octoslots
                         changeNames();
                     }
                     //set no loop delay with every successful read (except the 0x12 range)
-                    if (modeComboBox.Text == "Squad Battle") //classic mode renamed to squads
+                    if (modeComboBox.Text == "Classic Offsets")
                         delayRead = 0;
                     else
                         delayRead = 1337;
@@ -423,11 +433,13 @@ namespace Octoslots
 
             //checks if "R~4" is present in P2-P8 (unable to check P1 but it should be fine)
             uint nlength = nameOffset / 2;
-            for (int i = 0; i < (array.Length / nameOffset); i++)
+            for (int i = 0; i <= (array.Length / nameOffset); i++)
             {
-                int r4 = dataCheck16[(i * nlength) + 74] * 0x10000 + dataCheck16[(i * nlength) + 75];
+                int r4 = dataCheck16[(i * nlength)] * 0x10000 + dataCheck16[(i * nlength) + 1];
                 if (r4 == 0x10527E34)
+                {
                     check = true;
+                }
                 else
                 {
                     check = false;
@@ -436,7 +448,7 @@ namespace Octoslots
             }
 
             //the 0x12 range doesn't need checks, so the check always stays true if it's selected
-            if (modeComboBox.Text == "Squad Battle")
+            if (modeComboBox.Text == "Classic Offsets")
                 check = true;
 
             //returns the bool value depending on the bool for checking
@@ -449,7 +461,7 @@ namespace Octoslots
         //CHANGE GUI NAMES
         private void changeNames()
         {
-            if (modeComboBox.Text != "Squad Battle") //deals with the old offsets bug where your name appears at the top after a game.
+            if (modeComboBox.Text != "Classic Offsets") //deals with the old offsets bug where your name appears at the top after a game.
             {
                 checkBoxP1.Text = "  " + Encoding.BigEndianUnicode.GetString(name[0]);
             }
@@ -522,46 +534,6 @@ namespace Octoslots
         private void modeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             autoRefreshTimer_Tick(sender, e);
-        }
-
-        private void checkBoxP1_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[0] = checkBoxP1.Checked;
-        }
-
-        private void checkBoxP2_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[1] = checkBoxP2.Checked;
-        }
-
-        private void checkBoxP3_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[2] = checkBoxP3.Checked;
-        }
-
-        private void checkBoxP4_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[3] = checkBoxP4.Checked;
-        }
-
-        private void checkBoxP5_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[4] = checkBoxP5.Checked;
-        }
-
-        private void checkBoxP6_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[5] = checkBoxP6.Checked;
-        }
-
-        private void checkBoxP7_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[6] = checkBoxP7.Checked;
-        }
-
-        private void checkBoxP8_CheckedChanged(object sender, EventArgs e)
-        {
-            autoRefresh[7] = checkBoxP8.Checked;
         }
 
         //patches sound pack for normal octoling sfx
@@ -646,7 +618,7 @@ namespace Octoslots
         {
             for (uint i = 0; i < 8; i++)
             {
-                if (name[i].SequenceEqual(miiName))
+                if (name[i].SequenceEqual(miiName) && name[i].Length == miiName.Length )
                 {
                     autoRefresh[i] = true;
                 }
@@ -654,8 +626,7 @@ namespace Octoslots
 
             if (!canName)
             {
-                mainNameDelay = mainNameDelay <= 4 ? mainNameDelay + 1 : mainNameDelay;
-                if (mainNameDelay <= 4)
+                if (mainNameDelay >= 6)
                 {
                     uint address = 0x12D1F336;
                     uint length = (uint)miiName.Length;
@@ -672,16 +643,22 @@ namespace Octoslots
                     Array.Copy(b, P1, l);
 
                     if (P1.SequenceEqual(miiName))
-                    {
                         autoRefresh[0] = true;
-                    }
+                    Console.WriteLine(mainNameDelay);
                 }
+
+                mainNameDelay = mainNameDelay <= 111116 ? mainNameDelay + 1 : mainNameDelay;
             }
             else
                 mainNameDelay = 0;
         }
 
         private void mainPlayerPokeCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            checkVerify();
+        }
+
+        private void checkVerify()
         {
             //verifies the checks
             autoRefresh[0] = checkBoxP1.Checked;
@@ -693,7 +670,6 @@ namespace Octoslots
             autoRefresh[5] = checkBoxP7.Checked;
             autoRefresh[7] = checkBoxP8.Checked;
         }
-
         //load singleplayerform from the toolstrip single player button
         private void singlePlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
