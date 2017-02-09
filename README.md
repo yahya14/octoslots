@@ -13,8 +13,8 @@ http://fizzystack.web.fc2.com/paintball.html
 
 + Windows Vista or higher (Mac and Linux users, use Wine)
 + [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=328843)
-+ Wii U System Firmware 5.5.1 or below
-+ Splatoon with version 2.12.0
++ Wii U FW v5.5.1 or below
++ Splatoon with v2.12.0
 + TCPGecko + kernel from loadiine.ovh website, Dimok's [TCPGecko elf](http://wiiubru.com/appstore/#/app/TCPgecko), or [geckiine](https://gbatemp.net/threads/release-geckiine-tcpgecko-and-cafiine-combined.433057/)
 
 ##Usage
@@ -58,5 +58,5 @@ http://fizzystack.web.fc2.com/paintball.html
   
 ##Credits
 
-Most of the credit goes to Bkool999, the creator of the program, and implemented all the octoling hacks. The credits also goes to Yahya14 for the coding, and Seressa and OatmealDome for their Splat AIO 2 for the base of the program.
+Most of the credit goes to Bkool999, the creator of the program, and implemented all the octoling hacks. The credits also goes to Yahya14 for the coding, and Seressa and OatmealDome for their Splat AIO 2 as the base of the program.
 

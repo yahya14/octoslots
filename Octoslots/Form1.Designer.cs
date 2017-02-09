@@ -215,7 +215,6 @@
             this.mainPlayerPokeCheck.Name = "mainPlayerPokeCheck";
             this.toolTipP1.SetToolTip(this.mainPlayerPokeCheck, resources.GetString("mainPlayerPokeCheck.ToolTip"));
             this.mainPlayerPokeCheck.UseVisualStyleBackColor = true;
-            this.mainPlayerPokeCheck.CheckedChanged += new System.EventHandler(this.mainPlayerPokeCheck_CheckedChanged);
             // 
             // toggleGenderButton
             // 
