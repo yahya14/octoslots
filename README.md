@@ -50,7 +50,7 @@ http://fizzystack.web.fc2.com/paintball.html
 
 ##Known issues
 
-- Squad Battle and Private battle ram addresses appear to be broken. They also have an issue where the name slot placements are inconsistant with what you see on the tool and the game.  Because of this, They're replaced with with the *'Classic offsets'*. It should be noted that the names will only update as as the screen fades out of the matchmaking screen, and to match up the boxes checked with what you see in the tool, not in-game.  We hope to fix these issues in a later release.
+- Squad Battle and Private battle ram addresses appear to be broken. They also have an issue where the name slot placements are inconsistant with what you see on the tool and the game.  Because of this, They're replaced with the mode *Classic Offsets*. It should be noted that the names will only update as as the screen fades out of the matchmaking screen, and to match up the boxes checked with what you see in the tool, not in-game.  We hope to fix these issues in a later release.
 
 - Due to the way Octoslots works, Octolings show up as inklings in the menus. There is currently no solution to fix this.
 
