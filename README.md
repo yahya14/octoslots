@@ -54,7 +54,9 @@ http://fizzystack.web.fc2.com/paintball.html
 
 - Due to the way Octoslots works, Octolings show up as inklings in the menus. There is currently no solution to fix this.
 
-- Octolings will load fine in Battle Dojo, however, due to an unknown bug, the game crashes while leaving this mode. Unfortunately, there is no way to fix this issue. 
+- Octolings will load fine in Battle Dojo, however, due to an unknown bug, the game crashes while leaving this mode. Unfortunately, there is no way to fix this issue.
+
+- The **Auto-poke main player** function doesn't 100% work, since the program only finds and compares you're name on the program interface and not in-game. To make it work properly, choose the right **Mode** during the matchmaking screen, and do not choose the **Idle** option. This way the program can detect your player on the interface. You may then switch to Idle once the loading screen passes, as such it's designed to prevent crashing the program.
   
 ##Credits
 
