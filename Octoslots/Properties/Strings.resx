@@ -117,85 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BAD_MAE_1" xml:space="preserve">
-    <value>Your rank number is </value>
-  </data>
-  <data name="BAD_MAE_2" xml:space="preserve">
-    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 99, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
-  </data>
-  <data name="BAD_OKANE_1" xml:space="preserve">
-    <value>Your coins are set to </value>
-  </data>
-  <data name="BAD_OKANE_2" xml:space="preserve">
-    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 9999999, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
-  </data>
-  <data name="BAD_RANK_1" xml:space="preserve">
-    <value>Your level is </value>
-  </data>
-  <data name="BAD_RANK_2" xml:space="preserve">
-    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 50, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
-  </data>
-  <data name="BAD_SAZAE_1" xml:space="preserve">
-    <value>Your super sea snails are set to </value>
-  </data>
-  <data name="BAD_SAZAE_2" xml:space="preserve">
-    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 999, the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
-  </data>
-  <data name="BAD_UDE_1" xml:space="preserve">
-    <value>Your rank is set to </value>
-  </data>
-  <data name="BAD_UDE_2" xml:space="preserve">
-    <value>. (The game displays invalid values as the max.) This may have been caused by a bad tool/script, such as the max stats script that used to be on the Modding Hub. Do you want to change it to 10 (S+), the maximum, to fix it? (You can change it to another value later.) If you select "No" here, the true value will not display in the AIO and you are at risk for a ban.</value>
-  </data>
-  <data name="CANNOT_REMOVE_JR_TEXT" xml:space="preserve">
-    <value>You cannot remove the Splattershot Jr.</value>
-  </data>
   <data name="CONNECTION_FAILED_TEXT" xml:space="preserve">
     <value>Connection failed. Make sure that the provided IP address is correct and that TCPGecko is not being blocked by firewalls.</value>
   </data>
-  <data name="EQUIPPED" xml:space="preserve">
-    <value>(EQUIPPED)</value>
-  </data>
-  <data name="FILL_IN_ALL_FIELDS_TEXT" xml:space="preserve">
-    <value>Please fill in all fields.</value>
+  <data name="ERROR" xml:space="preserve">
+    <value>A read error has occured, connect to your console again.</value>
   </data>
   <data name="FIND_DIFF_FAILED_TEXT" xml:space="preserve">
-    <value>Could not find the Splattershot Jr. in memory. Try using TCPGecko from loadiine.ovh. If that does not work, then the AIO may need to be updated for a new version of Splatoon.</value>
-  </data>
-  <data name="INVALID" xml:space="preserve">
-    <value>Invalid</value>
-  </data>
-  <data name="INVALID_CLEAR_STATE" xml:space="preserve">
-    <value>Invalid clear state.</value>
+    <value>Could not find Splattershot Jr. in memory, so the program has disconnected. Ensure that a supported TCPGecko is used (e.g Loadiine.ovh).</value>
   </data>
   <data name="INVALID_IP_TEXT" xml:space="preserve">
     <value>An invalid IP address was provided.</value>
-  </data>
-  <data name="INVALID_LEVEL_NUMBER" xml:space="preserve">
-    <value>Invalid level number.</value>
-  </data>
-  <data name="LEVEL_ALREADY_ADDED_TEXT" xml:space="preserve">
-    <value>This level has already been added. If you wish to edit it, please right click it in the list.</value>
-  </data>
-  <data name="NO" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="SELECT_TIMER_TYPE_TEXT" xml:space="preserve">
-    <value>Please select a timer type.</value>
-  </data>
-  <data name="SINGLE_PLAYER_RESET_TEXT" xml:space="preserve">
-    <value>Splat-AIO will reset all Octo Valley flags, removing all single player progress currently on your save file. Are you sure you want to continue?</value>
-  </data>
-  <data name="SINGLE_PLAYER_RESET_TITLE" xml:space="preserve">
-    <value>Alert</value>
-  </data>
-  <data name="VERSION_CHECK_FAILED_TEXT" xml:space="preserve">
-    <value>The AIO is incompatible with this version of Splatoon. If there is an update available, please download the new update to continue using the AIO.</value>
-  </data>
-  <data name="WEAPON_EXISTS_TEXT" xml:space="preserve">
-    <value>This weapon has already been added. If you wish to edit it, please right click it in the list.</value>
-  </data>
-  <data name="YES" xml:space="preserve">
-    <value>Yes</value>
   </data>
 </root>

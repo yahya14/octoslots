@@ -94,7 +94,7 @@
             // 
             // autoRefreshTimer
             // 
-            this.autoRefreshTimer.Interval = 1250;
+            this.autoRefreshTimer.Interval = 1234;
             this.autoRefreshTimer.Tick += new System.EventHandler(this.autoRefreshTimer_Tick);
             // 
             // checkBoxP3
@@ -182,8 +182,8 @@
             // 
             // playerPicBox
             // 
-            this.playerPicBox.Image = global::Octoslots.Properties.Resources.Splatoon_Player_Slots_Full;
             resources.ApplyResources(this.playerPicBox, "playerPicBox");
+            this.playerPicBox.Image = global::Octoslots.Properties.Resources.Splatoon_Player_Slots_Full;
             this.playerPicBox.Name = "playerPicBox";
             this.playerPicBox.TabStop = false;
             // 
@@ -193,9 +193,11 @@
             this.modeComboBox.Items.AddRange(new object[] {
             resources.GetString("modeComboBox.Items"),
             resources.GetString("modeComboBox.Items1"),
-            resources.GetString("modeComboBox.Items2")});
+            resources.GetString("modeComboBox.Items2"),
+            resources.GetString("modeComboBox.Items3")});
             resources.ApplyResources(this.modeComboBox, "modeComboBox");
             this.modeComboBox.Name = "modeComboBox";
+            this.modeComboBox.SelectedIndexChanged += new System.EventHandler(this.modeComboBox_SelectedIndexChanged);
             // 
             // modeLabel
             // 
@@ -253,8 +255,8 @@
             // 
             // singlePlayerToolStripMenuItem
             // 
-            this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
             resources.ApplyResources(this.singlePlayerToolStripMenuItem, "singlePlayerToolStripMenuItem");
+            this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
             this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.singlePlayerToolStripMenuItem_Click);
             // 
             // Form1
@@ -290,6 +292,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.playerPicBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -305,17 +308,9 @@
         private System.Windows.Forms.Label IPLabel;
         private System.Windows.Forms.Label gameVerLabel;
         private System.Windows.Forms.Timer autoRefreshTimer;
-        private System.Windows.Forms.CheckBox checkBoxP3;
-        private System.Windows.Forms.CheckBox checkBoxP5;
 
         private System.Windows.Forms.Label creditLabel;
         private System.Windows.Forms.Label BKOOL999Label;
-        private System.Windows.Forms.CheckBox checkBoxP1;
-        private System.Windows.Forms.CheckBox checkBoxP2;
-        private System.Windows.Forms.CheckBox checkBoxP4;
-        private System.Windows.Forms.CheckBox checkBoxP6;
-        private System.Windows.Forms.CheckBox checkBoxP7;
-        private System.Windows.Forms.CheckBox checkBoxP8;
         private System.Windows.Forms.PictureBox playerPicBox;
         private System.Windows.Forms.ComboBox modeComboBox;
         private System.Windows.Forms.Label modeLabel;
@@ -328,6 +323,14 @@
         private System.Windows.Forms.ToolStripMenuItem singlePlayerToolStripMenuItem;
         private System.Windows.Forms.Button disconnectBox;
         private System.Windows.Forms.CheckBox mainPlayerPokeCheck;
+        private System.Windows.Forms.CheckBox checkBoxP3;
+        private System.Windows.Forms.CheckBox checkBoxP5;
+        private System.Windows.Forms.CheckBox checkBoxP1;
+        private System.Windows.Forms.CheckBox checkBoxP2;
+        private System.Windows.Forms.CheckBox checkBoxP4;
+        private System.Windows.Forms.CheckBox checkBoxP6;
+        private System.Windows.Forms.CheckBox checkBoxP7;
+        private System.Windows.Forms.CheckBox checkBoxP8;
     }
 }
 

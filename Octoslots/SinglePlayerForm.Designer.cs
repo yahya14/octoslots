@@ -36,6 +36,7 @@
             this.radioInklingsOnly = new System.Windows.Forms.RadioButton();
             this.singlePlayerGroup = new System.Windows.Forms.GroupBox();
             this.singlePlayerCheck = new System.Windows.Forms.CheckBox();
+            this.playerOctogearCheckbox = new System.Windows.Forms.CheckBox();
             this.singlePlayerGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,10 +92,18 @@
             this.singlePlayerCheck.UseVisualStyleBackColor = true;
             this.singlePlayerCheck.CheckedChanged += new System.EventHandler(this.singlePlayerCheck_CheckedChanged);
             // 
+            // playerOctogearCheckbox
+            // 
+            resources.ApplyResources(this.playerOctogearCheckbox, "playerOctogearCheckbox");
+            this.playerOctogearCheckbox.Name = "playerOctogearCheckbox";
+            this.playerOctogearCheckbox.UseVisualStyleBackColor = true;
+            this.playerOctogearCheckbox.CheckedChanged += new System.EventHandler(this.playerOctogearCheckbox_CheckedChanged);
+            // 
             // SinglePlayerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.playerOctogearCheckbox);
             this.Controls.Add(this.singlePlayerCheck);
             this.Controls.Add(this.singlePlayerGroup);
             this.Controls.Add(this.label1);
@@ -117,5 +126,6 @@
         private System.Windows.Forms.RadioButton radioInklingBoy;
         private System.Windows.Forms.RadioButton radioAllGenders;
         private System.Windows.Forms.RadioButton radioInklingsOnly;
+        private System.Windows.Forms.CheckBox playerOctogearCheckbox;
     }
 }

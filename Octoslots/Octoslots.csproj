@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checker.Designer.cs">
+      <DependentUpon>Checker.cs</DependentUpon>
+    </Compile>
     <Compile Include="FontConfig.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Form1.cs">
@@ -111,6 +117,9 @@
     </Compile>
     <Compile Include="tcpconn.cs" />
     <Compile Include="TCPGecko.cs" />
+    <EmbeddedResource Include="Checker.resx">
+      <DependentUpon>Checker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.ja.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

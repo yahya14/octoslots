@@ -259,11 +259,8 @@
     <value>15</value>
   </data>
   <metadata name="autoRefreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 16</value>
+    <value>18, 16</value>
   </metadata>
-  <data name="checkBoxP3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="checkBoxP3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="&gt;&gt;checkBoxP3.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="checkBoxP5.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="checkBoxP5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -390,12 +384,6 @@
   <data name="&gt;&gt;BKOOL999Label.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <metadata name="toolTipP1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, 18</value>
-  </metadata>
-  <data name="checkBoxP1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="checkBoxP1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
@@ -414,6 +402,9 @@
   <data name="checkBoxP1.Text" xml:space="preserve">
     <value>  Player 1</value>
   </data>
+  <metadata name="toolTipP1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>166, 16</value>
+  </metadata>
   <data name="checkBoxP1.ToolTip" xml:space="preserve">
     <value>This is your player outside of online battles.</value>
   </data>
@@ -428,9 +419,6 @@
   </data>
   <data name="&gt;&gt;checkBoxP1.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="checkBoxP2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="checkBoxP2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -462,9 +450,6 @@
   <data name="&gt;&gt;checkBoxP2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="checkBoxP4.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="checkBoxP4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
@@ -494,9 +479,6 @@
   </data>
   <data name="&gt;&gt;checkBoxP4.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="checkBoxP6.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="checkBoxP6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -528,9 +510,6 @@
   <data name="&gt;&gt;checkBoxP6.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="checkBoxP7.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="checkBoxP7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
@@ -560,9 +539,6 @@
   </data>
   <data name="&gt;&gt;checkBoxP7.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="checkBoxP8.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="checkBoxP8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -594,6 +570,9 @@
   <data name="&gt;&gt;checkBoxP8.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="playerPicBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="playerPicBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -619,13 +598,16 @@
     <value>20</value>
   </data>
   <data name="modeComboBox.Items" xml:space="preserve">
-    <value>Turf/Ranked Battle</value>
+    <value>Choose Mode (Idle)</value>
   </data>
   <data name="modeComboBox.Items1" xml:space="preserve">
-    <value>Classic Offsets</value>
+    <value>Turf/Ranked Battle</value>
   </data>
   <data name="modeComboBox.Items2" xml:space="preserve">
-    <value>Idle (cease func.)</value>
+    <value>Private Battle</value>
+  </data>
+  <data name="modeComboBox.Items3" xml:space="preserve">
+    <value>Classic Offsets</value>
   </data>
   <data name="modeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 71</value>
@@ -637,7 +619,7 @@
     <value>2</value>
   </data>
   <data name="modeComboBox.Text" xml:space="preserve">
-    <value>Turf/Ranked Battle</value>
+    <value>Choose Mode (Idle)</value>
   </data>
   <data name="&gt;&gt;modeComboBox.Name" xml:space="preserve">
     <value>modeComboBox</value>
@@ -678,9 +660,6 @@
   <data name="&gt;&gt;modeLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="toolTipP1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, 18</value>
-  </metadata>
   <data name="mainPlayerPokeCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -747,6 +726,9 @@
   <data name="sfxNormalRadio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="sfxNormalRadio.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="sfxNormalRadio.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 73</value>
   </data>
@@ -771,6 +753,9 @@
   <data name="&gt;&gt;sfxNormalRadio.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="sfxEliteRadio.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="sfxEliteRadio.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 91</value>
   </data>
@@ -794,6 +779,9 @@
   </data>
   <data name="&gt;&gt;sfxEliteRadio.ZOrder" xml:space="preserve">
     <value>22</value>
+  </data>
+  <data name="sfxCombineRadio.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="sfxCombineRadio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -823,8 +811,17 @@
     <value>21</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 18</value>
+    <value>269, 16</value>
   </metadata>
+  <data name="singlePlayerToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="singlePlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="singlePlayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Single Player</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -848,12 +845,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>23</value>
-  </data>
-  <data name="singlePlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
-  </data>
-  <data name="singlePlayerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Single Player</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
