@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 9</value>
+    <value>8, 9</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 13</value>
@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="radioInklingGirl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -262,10 +262,10 @@
     <value>False</value>
   </data>
   <data name="singlePlayerGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 43</value>
+    <value>11, 43</value>
   </data>
   <data name="singlePlayerGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 70</value>
+    <value>200, 70</value>
   </data>
   <data name="singlePlayerGroup.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -280,13 +280,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;singlePlayerGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="singlePlayerCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="singlePlayerCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 30</value>
+    <value>19, 30</value>
   </data>
   <data name="singlePlayerCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
@@ -307,22 +307,25 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;singlePlayerCheck.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="playerOctogearCheckbox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="playerOctogearCheckbox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="playerOctogearCheckbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 30</value>
+    <value>119, 30</value>
   </data>
   <data name="playerOctogearCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
+    <value>79, 17</value>
   </data>
   <data name="playerOctogearCheckbox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="playerOctogearCheckbox.Text" xml:space="preserve">
-    <value>Octogear for player</value>
+    <value>Swap Gear</value>
   </data>
   <data name="&gt;&gt;playerOctogearCheckbox.Name" xml:space="preserve">
     <value>playerOctogearCheckbox</value>
@@ -334,6 +337,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;playerOctogearCheckbox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="noteLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noteLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 116</value>
+  </data>
+  <data name="noteLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 26</value>
+  </data>
+  <data name="noteLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="noteLabel.Text" xml:space="preserve">
+    <value>Note: The feature will automatically
+disable itself when this window closes.</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Name" xml:space="preserve">
+    <value>noteLabel</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -346,7 +377,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>221, 125</value>
+    <value>226, 151</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

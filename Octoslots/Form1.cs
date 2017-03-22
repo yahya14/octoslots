@@ -90,20 +90,19 @@ namespace Octoslots
             //un-nullify names array
             for (int i = 0; i < 8; i++)
                 name[i] = new byte[0];
-
-            
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
             //checks program update
             Checker check = new Checker();
-            new Thread(() => {
+            new Thread(() =>
+            {
                 Thread.Sleep(200);
                 check.checkUpdate();
 
                 Invoke(new MethodInvoker(Check));
-                }).Start();
+            }).Start();
         }
 
         private void Check()
@@ -262,41 +261,20 @@ namespace Octoslots
             //syncs checks with the bool array
             checkVerify();
 
-            //reads names to display them on the gui
-            getNames();
+            //switches between octoling models in menus
+            menuOctohax();
 
-            //auto pokes main player when checked
-            if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
-                mainNameChecker();
-
-            //loads octohax in menus
-            menuCheck[0] = Gecko.peek(0x106E093C);
-            menuCheck[1] = Gecko.peek(0x10707EA0);
-
-            if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2])  || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])) && (autoRefresh[0] || autoRefresh[1]))
+            //switch modes
+            if (!SinglePlayerForm.SPPoke) //(main function)
             {
-                //for activating only when the value changes
-                menuCheck[2] = menuCheck[0];
-                menuCheck[3] = menuCheck[1];
+                //reads names to display them on the gui
+                getNames();
 
-                if (autoRefresh[0])
-                    writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
+                //auto pokes main player when checked
+                if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
+                    mainNameChecker();
 
-                autoRefresh[0] = autoRefresh[1] = false;
-                Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
-                Gecko.poke(0x12D1F460 + octodiff, 0x00000000); //P2
-            }
-            else if (menuCheck[0] != menuCheck[2] || menuCheck[1] != menuCheck[3])
-            {
-                menuCheck[2] = menuCheck[0];
-                menuCheck[3] = menuCheck[1];
-
-                writeString(0x105EF3B0, "Player00", 8); //pokes safe octohax
-            }
-            //switch 
-            if (SinglePlayerForm.SPPoke == false)
-            {
-                //pokes gender 2 on checked players (main function)
+                //pokes gender 2 on checked players
                 for (uint i = 0; i < 8; i++)
                     if (autoRefresh[i])
                         Gecko.poke(0x12D1F364 + octodiff + (i * 0xFC), 0x00000002);
@@ -321,6 +299,42 @@ namespace Octoslots
                     sfxEliteRadio_CheckedChanged(sender, e);
                 }
             }
+            //what is this for bkool? :o -Yahya14
+            //test for something later.  related to private battle.
+            //if (Gecko.peek(0x39737C94) == 0x616C4256)
+            //{
+            //MessageBox.Show ("Success!");
+            //}
+        }
+
+        private void menuOctohax()
+        {
+            //checks menu values for octohax
+            menuCheck[0] = Gecko.peek(0x106E093C);
+            menuCheck[1] = Gecko.peek(0x10707EA0);
+
+            if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])) && (autoRefresh[0] || autoRefresh[1]))
+            {
+                //for activating only when the value changes
+                menuCheck[2] = menuCheck[0];
+                menuCheck[3] = menuCheck[1];
+
+                if (autoRefresh[0])
+                    writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
+
+                autoRefresh[0] = autoRefresh[1] = false;
+
+                //for Battle Dojo (experimental)
+                Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
+                Gecko.poke(0x12D1F460 + octodiff, 0x00000000); //P2
+            }
+            else if (menuCheck[0] != menuCheck[2] || menuCheck[1] != menuCheck[3])
+            {
+                menuCheck[2] = menuCheck[0];
+                menuCheck[3] = menuCheck[1];
+
+                writeString(0x105EF3B0, "Player00", 8); //pokes safe octohax
+            }
         }
 
         public void getNames()
@@ -328,17 +342,17 @@ namespace Octoslots
             //delayed timer note: every name validated has no delay, every name failed to validate will have delay based the value of the next line.
             if (delayRead >= 1) //change the delay here
             {
-                
+
                 if (modeComboBox.Text == "Squad Battle") //broken
                 {
-                     nameDump(SquadAddr, 0x460, 0x9C);
-                     if (!canName)
-                     switchSquadAddr();
+                    nameDump(SquadAddr, 0x460, 0x9C);
+                    if (!canName)
+                        switchSquadAddr();
                 }
-                else if (modeComboBox.Text == "Private Battle") //broken
+                else if (modeComboBox.Text == "Private Battle")
                     nameDump(PBAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Splatfest Battle") //broken
-                nameDump(FestAddr, 0x460, 0x9C);
+                    nameDump(FestAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Turf/Ranked Battle")
                     nameDump(OnlineAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Classic Offsets") //Offset names within range of 0x12.
@@ -346,137 +360,84 @@ namespace Octoslots
                 //All broken addresses need pointers for it, which I have no possesion of yet.
             }
             else
-                delayRead = delayRead >= 1? delayRead : delayRead + 1;
+                delayRead = delayRead >= 1 ? delayRead : delayRead + 1;
         }
 
         //DUMP
         public void nameDump(uint address, uint length, uint nameOffset)
         {
-            try
+            //dumps all the player names
+            for (uint i = 0; i < 8; i++)
             {
-                //name checler
-                if (!canName && modeComboBox.Text != "Classic Offsets")
+                try
                 {
-                    //reads the first two names for name validation
-                    using (MemoryStream small = new MemoryStream())
+                    using (MemoryStream Player = new MemoryStream())
                     {
-                        uint slength = length - (nameOffset * 6);
-                        uint i = 256 - (256 - slength);
-
-                        Gecko.Dump(address, address + slength, small);
-
-                        //define dump to byte array
-                        small.Seek(0, SeekOrigin.Begin);
-                        byte[] smallb = small.GetBuffer();
-                        byte[] playerscheck = new byte[i];
-                        Array.Copy(smallb, playerscheck, i);
-
-                        //validates to change names on gui
-                        canName = validNamesChecker(playerscheck, nameOffset);
-                    }
-                    delayRead = 0;
-
-                }
-                else if (modeComboBox.Text == "Classic Offsets") //Classic doesn't need checks
-                    canName = true;
-
-                //if names validation is true, all names can be read and displayed on gui
-                if (canName)
-                {
-                    //dumps all the player names
-                    using (MemoryStream mainstream = new MemoryStream())
-                    {
-                        uint j = 256 - (256 - length);
-
                         //dumps data from memory
-                        Gecko.Dump(address, address + length, mainstream);
+                        Gecko.Dump(address + (i * nameOffset), address + (i * nameOffset) + 0x1E, Player);
 
                         //define dump to byte array
-                        mainstream.Seek(0, SeekOrigin.Begin);
-                        byte[] b = mainstream.GetBuffer();
-                        byte[] playersArray = new byte[j];
-                        Array.Copy(b, playersArray, j);
+                        Player.Seek(0, SeekOrigin.Begin);
+                        byte[] b = Player.GetBuffer();
 
-                        //validates to change names on gui
-                        canName = validNamesChecker(playersArray, nameOffset);
+                        //checks name before reading 
+                        if (!(canName = validNamesChecker(b)))
+                            break;
 
-                        if (canName)
+                        byte[] playersArray = new byte[0x16];
+                        Array.Copy(b, 8, playersArray, 0, 0x16);
+
+                        //detects name length before a 16-bit null at every name
+                        uint nameLength = 0;
+                        for (uint c = 0; c < 0x16; c += 2)
                         {
-                            //organize all player names from dump array if the name is validated.
-                            uint nameLength = 0;
-                            uint k = 0;
-
-                            //detects name length before a 16-bit null at every name
-                            for (uint i = 0; i < length; i += nameOffset)
+                            if (playersArray[c] == 0 && playersArray[c + 1] == 0)
                             {
-                                for (uint c = 0; c < 0x16; c += 2)
-                                {
-                                    uint l = i + c;
-                                    if (playersArray[l + 8] == 0 && playersArray[l + 9] == 0)
-                                    {
-                                        nameLength = c;
-                                        break;
-                                    }
-                                }
-
-                                //clone the displayable name array before the first null byte
-                                name[k] = new byte[nameLength];
-                                Array.Copy(playersArray, i + 8, name[k], 0, nameLength);
-                                k++;
+                                nameLength = c;
+                                break;
                             }
                         }
-                        //displays all names on the GUI
-                        changeNames();
+
+                        //clone the displayable name array before the first null byte
+                        name[i] = new byte[nameLength];
+                        Array.Copy(playersArray, name[i], nameLength);
                     }
-                    //set no loop delay with every successful read (except the 0x12 range)
-                    if (modeComboBox.Text == "Classic Offsets")
-                        delayRead = 0;
-                    else
-                        delayRead = 1337;
+                }
+                catch (ETCPGeckoException)
+                {
+                    Disconnect();
+                    MessageBox.Show(Properties.Strings.ERROR, "Session Has Been Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (ETCPGeckoException)
-            {
-                Gecko.Connect();
-                MessageBox.Show(Properties.Strings.ERROR, "Session Has Been Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            //displays all names on the GUI
+            if (canName)
+                changeNames();
+
+            //set no loop delay with every successful read (except the 0x12 range)
+            if (modeComboBox.Text == "Classic Offsets")
+                delayRead = 0;
+            else
+                delayRead = 1337;
         }
 
-        private bool validNamesChecker(byte[] array, uint nameOffset)
+        private bool validNamesChecker(byte[] array)
         {
             bool check = false;
+            int r4 = (array[0] << 24) + (array[1] << 16) + (array[2] << 8) + array[3];
 
-            //creates a 16 bit version of the data array
-            int alength = array.Length / 4;
-            int[] dataCheck32 = new int[alength];
-            for (int i = 0; i < alength; i++)
-                dataCheck32[i] = (array[i * 4] << 24) + (array[(i * 4) + 1] << 16) + (array[(i * 4) + 2] << 8) + array[(i * 4) + 3];
-
-            //checks if "R~4" is present in P2-P8 (unable to check P1 but it should be fine)
-            uint nlength = nameOffset / 4;
-            for (int i = 0; i <= (array.Length / nameOffset); i++)
-            {
-                int r4 = (dataCheck32[(i * nlength)]);
-                if (r4 == 0x10527E34)
-                {
-                    check = true;
-                }
-                else
-                {
-                    check = false;
-                    break;
-                }
-            }
+            //checks if "R~4" is present in Player array
+            if (r4 == 0x10527E34)
+                check = true;
+            else
+                check = false;
 
             //the 0x12 range doesn't need checks, so the check always stays true if it's selected
             if (modeComboBox.Text == "Classic Offsets")
                 check = true;
 
             //returns the bool value depending on the bool for checking
-            if (check == true)
-                return true;
-            else
-                return false;
+            return check;
         }
 
         //CHANGE GUI NAMES
@@ -569,7 +530,7 @@ namespace Octoslots
         {
             for (uint i = 0; i < 8; i++)
             {
-                if (name[i].SequenceEqual(miiName) && name[i].Length == miiName.Length )
+                if (name[i].SequenceEqual(miiName) && name[i].Length == miiName.Length)
                 {
                     autoRefresh[i] = true;
                     break;
@@ -619,48 +580,54 @@ namespace Octoslots
         //patches sound pack for normal octoling sfx
         private void sfxNormalRadio_CheckedChanged(object sender, EventArgs e)
         {
-            if (sfxNormalRadio.Checked || sfxCombineRadio.Checked)
+            if (Gecko.peek(0x39737C94) == 0x616C4256)
             {
-                Gecko.poke(0x39737C94, 0x616C4156);
-                Gecko.poke(0x39737CA8, 0x616C4156);
-                Gecko.poke(0x39737CBC, 0x616C4156);
-                Gecko.poke(0x39737CD0, 0x616C4156);
-                Gecko.poke(0x39737CE4, 0x76616C41);
-                Gecko.poke(0x39737CFC, 0x41566F69);
-                Gecko.poke(0x39737D20, 0x76616C41);
-                Gecko.poke(0x39737D34, 0x6C41566F);
-                Gecko.poke(0x39737D44, 0x76616C41);
-                Gecko.poke(0x39737D58, 0x6C41566F);
-                Gecko.poke(0x39737D68, 0x76616C41);
-                Gecko.poke(0x39737D7C, 0x616C4156);
-                Gecko.poke(0x39737D90, 0x6C41566F);
-                Gecko.poke(0x39737DA4, 0x41566F69);
-                Gecko.poke(0x39737DB4, 0x616C4156);
-                Gecko.poke(0x39737DC8, 0x41566F69);
+                if (sfxNormalRadio.Checked || sfxCombineRadio.Checked)
+                {
+                    Gecko.poke(0x39737C94, 0x616C4156);
+                    Gecko.poke(0x39737CA8, 0x616C4156);
+                    Gecko.poke(0x39737CBC, 0x616C4156);
+                    Gecko.poke(0x39737CD0, 0x616C4156);
+                    Gecko.poke(0x39737CE4, 0x76616C41);
+                    Gecko.poke(0x39737CFC, 0x41566F69);
+                    Gecko.poke(0x39737D20, 0x76616C41);
+                    Gecko.poke(0x39737D34, 0x6C41566F);
+                    Gecko.poke(0x39737D44, 0x76616C41);
+                    Gecko.poke(0x39737D58, 0x6C41566F);
+                    Gecko.poke(0x39737D68, 0x76616C41);
+                    Gecko.poke(0x39737D7C, 0x616C4156);
+                    Gecko.poke(0x39737D90, 0x6C41566F);
+                    Gecko.poke(0x39737DA4, 0x41566F69);
+                    Gecko.poke(0x39737DB4, 0x616C4156);
+                    Gecko.poke(0x39737DC8, 0x41566F69);
+                }
             }
         }
 
         //patches sound pack for elite octoling sfx
         private void sfxEliteRadio_CheckedChanged(object sender, EventArgs e)
         {
-            if (sfxEliteRadio.Checked || sfxCombineRadio.Checked)
+            if (Gecko.peek(0x39737C94) == 0x616C4156)
             {
-                Gecko.poke(0x39737C94, 0x616C4256);
-                Gecko.poke(0x39737CA8, 0x616C4256);
-                Gecko.poke(0x39737CBC, 0x616C4256);
-                Gecko.poke(0x39737CD0, 0x616C4256);
-                Gecko.poke(0x39737CE4, 0x76616C42);
-                Gecko.poke(0x39737CFC, 0x42566F69);
-                Gecko.poke(0x39737D20, 0x76616C42);
-                Gecko.poke(0x39737D34, 0x6C42566F);
-                Gecko.poke(0x39737D44, 0x76616C42);
-                Gecko.poke(0x39737D58, 0x6C42566F);
-                Gecko.poke(0x39737D68, 0x76616C42);
-                Gecko.poke(0x39737D7C, 0x616C4256);
-                Gecko.poke(0x39737D90, 0x6C42566F);
-                Gecko.poke(0x39737DA4, 0x42566F69);
-                Gecko.poke(0x39737DB4, 0x616C4256);
-                Gecko.poke(0x39737DC8, 0x42566F69);
+                if (sfxEliteRadio.Checked || sfxCombineRadio.Checked)
+                {
+                    Gecko.poke(0x39737C94, 0x616C4256);
+                    Gecko.poke(0x39737CA8, 0x616C4256);
+                    Gecko.poke(0x39737CBC, 0x616C4256);
+                    Gecko.poke(0x39737CD0, 0x616C4256);
+                    Gecko.poke(0x39737CE4, 0x76616C42);
+                    Gecko.poke(0x39737CFC, 0x42566F69);
+                    Gecko.poke(0x39737D20, 0x76616C42);
+                    Gecko.poke(0x39737D34, 0x6C42566F);
+                    Gecko.poke(0x39737D44, 0x76616C42);
+                    Gecko.poke(0x39737D58, 0x6C42566F);
+                    Gecko.poke(0x39737D68, 0x76616C42);
+                    Gecko.poke(0x39737D7C, 0x616C4256);
+                    Gecko.poke(0x39737D90, 0x6C42566F);
+                    Gecko.poke(0x39737DA4, 0x42566F69);
+                    Gecko.poke(0x39737DB4, 0x616C4256);
+                    Gecko.poke(0x39737DC8, 0x42566F69);
+                }
             }
         }
 
@@ -689,7 +656,6 @@ namespace Octoslots
                 checkBoxP7.Checked = true;
                 checkBoxP8.Checked = true;
             }
-
         }
 
         ////SINGLE PLAYER
@@ -733,10 +699,46 @@ namespace Octoslots
 
                 if (SinglePlayerForm.SPGearPoke)
                 {
-                    //????????????????????????????????????????????????????? :thumbsup:
+                    if (Gecko.peek(0x106DFDB4) == 0x1CAB543C) //worried about the value, may differ between TCPGecko(s) -Yahya14
+                    {
+                        //pokes player gear to Octoling gear
+                        Gecko.poke(0x12D1F384 + octodiff, 0x00006D60);
+                        Gecko.poke(0x12D1F3A0 + octodiff, 0x00006D60);
+                        Gecko.poke(0x12D1F3BC + octodiff, 0x00006D60);
+
+                        if (SinglePlayerForm.SPchoice[0] || SinglePlayerForm.SPchoice[2] || SinglePlayerForm.SPchoice[3])
+                        {
+                            //pokes all Octoling slots to hero gear
+                            Gecko.poke(0x12D1F480 + octodiff + (i * 0xFC), 0x00006978);
+                            Gecko.poke(0x12D1F49C + octodiff + (i * 0xFC), 0x00006978);
+                            Gecko.poke(0x12D1F4B8 + octodiff + (i * 0xFC), 0x00006978);
+                            //swaps player and rival weapons
+                            Gecko.poke(0x12D1F374 + octodiff, 0x000007D0);
+                            Gecko.poke(0x12D1F378 + octodiff, 0x000007D0);
+                            Gecko.poke(0x12D1F470 + octodiff + (i * 0xFC), 0x000003E8);
+                            Gecko.poke(0x12D1F474 + octodiff + (i * 0xFC), 0x000003E8);
+                        }
+
+                        else if (SinglePlayerForm.SPchoice[1])
+                        {
+                            //pokes Inkling girls and boys in Octoling slots to hero gear
+                            Gecko.poke(0x12D1F480 + octodiff, 0x00006978);
+                            Gecko.poke(0x12D1F49C + octodiff, 0x00006978);
+                            Gecko.poke(0x12D1F4B8 + octodiff, 0x00006978);
+                            Gecko.poke(0x12D1F57C + octodiff, 0x00006978);
+                            Gecko.poke(0x12D1F598 + octodiff, 0x00006978);
+                            Gecko.poke(0x12D1F5B4 + octodiff, 0x00006978);
+
+                            Gecko.poke(0x12D1F374 + octodiff, 0x000007D0);
+                            Gecko.poke(0x12D1F378 + octodiff, 0x000007D0);
+                            Gecko.poke(0x12D1F470 + octodiff, 0x000003E8);
+                            Gecko.poke(0x12D1F474 + octodiff, 0x000003E8);
+                            Gecko.poke(0x12D1F56C + octodiff, 0x000003E8);
+                            Gecko.poke(0x12D1F570 + octodiff, 0x000003E8);
+                        }
+                    }
                 }
             }
         }
     }
 }
-

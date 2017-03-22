@@ -35,23 +35,29 @@ namespace Octoslots
 
         private void radioAllGenders_CheckedChanged(object sender, EventArgs e)
         {
-            SPchoice[1] = radioInklingGirl.Checked;
+            SPchoice[1] = radioAllGenders.Checked;
         }
 
         private void radioInklingBoy_CheckedChanged(object sender, EventArgs e)
         {
-            SPchoice[2] = radioInklingGirl.Checked;
+            SPchoice[2] = radioInklingBoy.Checked;
         }
 
         private void radioInklingsOnly_CheckedChanged(object sender, EventArgs e)
         {
-            SPchoice[3] = radioInklingGirl.Checked;
+            SPchoice[3] = radioInklingsOnly.Checked;
         }
 
         private void singlePlayerCheck_CheckedChanged(object sender, EventArgs e)
         {
             singlePlayerGroup.Enabled = singlePlayerCheck.Checked;
             SPPoke = singlePlayerCheck.Checked;
+            playerOctogearCheckbox.Enabled = singlePlayerCheck.Checked;
+
+            if (!singlePlayerCheck.Checked)
+            {
+                playerOctogearCheckbox.Checked = false;
+            }
         }
 
         private void playerOctogearCheckbox_CheckedChanged(object sender, EventArgs e)

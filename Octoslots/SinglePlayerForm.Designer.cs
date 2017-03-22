@@ -37,6 +37,7 @@
             this.singlePlayerGroup = new System.Windows.Forms.GroupBox();
             this.singlePlayerCheck = new System.Windows.Forms.CheckBox();
             this.playerOctogearCheckbox = new System.Windows.Forms.CheckBox();
+            this.noteLabel = new System.Windows.Forms.Label();
             this.singlePlayerGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,10 +100,17 @@
             this.playerOctogearCheckbox.UseVisualStyleBackColor = true;
             this.playerOctogearCheckbox.CheckedChanged += new System.EventHandler(this.playerOctogearCheckbox_CheckedChanged);
             // 
+            // noteLabel
+            // 
+            resources.ApplyResources(this.noteLabel, "noteLabel");
+            this.noteLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.noteLabel.Name = "noteLabel";
+            // 
             // SinglePlayerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.playerOctogearCheckbox);
             this.Controls.Add(this.singlePlayerCheck);
             this.Controls.Add(this.singlePlayerGroup);
@@ -127,5 +135,6 @@
         private System.Windows.Forms.RadioButton radioAllGenders;
         private System.Windows.Forms.RadioButton radioInklingsOnly;
         private System.Windows.Forms.CheckBox playerOctogearCheckbox;
+        private System.Windows.Forms.Label noteLabel;
     }
 }
