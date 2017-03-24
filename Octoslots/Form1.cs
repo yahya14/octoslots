@@ -299,12 +299,6 @@ namespace Octoslots
                     sfxEliteRadio_CheckedChanged(sender, e);
                 }
             }
-            //what is this for bkool? :o -Yahya14
-            //test for something later.  related to private battle.
-            //if (Gecko.peek(0x39737C94) == 0x616C4256)
-            //{
-            //MessageBox.Show ("Success!");
-            //}
         }
 
         private void menuOctohax()
@@ -328,13 +322,23 @@ namespace Octoslots
                 Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
                 Gecko.poke(0x12D1F460 + octodiff, 0x00000000); //P2
             }
-            else if (menuCheck[0] != menuCheck[2] || menuCheck[1] != menuCheck[3])
+            else if (menuCheck[0] != menuCheck[2])
             {
                 menuCheck[2] = menuCheck[0];
                 menuCheck[3] = menuCheck[1];
 
-                writeString(0x105EF3B0, "Player00", 8); //pokes safe octohax
+                writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
             }
+        }
+
+
+        private void checkBoxP1_CheckedChanged(object sender, EventArgs e)
+        {
+            //activates initial part of octohax in the menus
+            if (checkBoxP1.Checked)
+                writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
+            else
+                writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
         }
 
         public void getNames()
