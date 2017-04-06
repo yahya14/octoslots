@@ -139,8 +139,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SinglePlayerForm.ja.resx">
+      <DependentUpon>SinglePlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SinglePlayerForm.resx">
       <DependentUpon>SinglePlayerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

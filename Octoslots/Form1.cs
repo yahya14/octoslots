@@ -3,7 +3,6 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Text;
 using System.Linq;
 using System.Threading;
 
@@ -13,7 +12,6 @@ namespace Octoslots
     {
         private void ICCheckBox()
         {
-
             //fixes transparecy for the checkbox backgrounds on the interface
             checkBoxP1.Parent = playerPicBox;
             checkBoxP1.BackColor = Color.Transparent;
@@ -236,7 +234,6 @@ namespace Octoslots
             mainPlayerPokeCheck.Enabled = false;
 
             SinglePlayerForm SP = new SinglePlayerForm();
-            SP.CheckBoxChecked = false;
         }
 
         private void disconnectBox_Click(object sender, EventArgs e)
@@ -264,17 +261,17 @@ namespace Octoslots
             //switches between octoling models in menus
             menuOctohax();
 
-            //switch modes
-            if (!SinglePlayerForm.SPPoke) //(main function)
+            //reads names to display them on the gui
+            getNames();
+
+            //auto pokes main player when checked
+            if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
+                mainNameChecker();
+            
+            //switch 
+            if (SinglePlayerForm.SPPoke == false)
             {
-                //reads names to display them on the gui
-                getNames();
-
-                //auto pokes main player when checked
-                if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
-                    mainNameChecker();
-
-                //pokes gender 2 on checked players
+                //pokes gender 2 on checked players (main function)
                 for (uint i = 0; i < 8; i++)
                     if (autoRefresh[i])
                         Gecko.poke(0x12D1F364 + octodiff + (i * 0xFC), 0x00000002);
@@ -306,15 +303,16 @@ namespace Octoslots
             //checks menu values for octohax
             menuCheck[0] = Gecko.peek(0x106E093C);
             menuCheck[1] = Gecko.peek(0x10707EA0);
-
-            if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])) && (autoRefresh[0] || autoRefresh[1]))
+            if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])) && (mainPlayerPokeCheck.Checked || autoRefresh[0] || autoRefresh[1]))
             {
                 //for activating only when the value changes
                 menuCheck[2] = menuCheck[0];
                 menuCheck[3] = menuCheck[1];
 
-                if (autoRefresh[0])
+                if (autoRefresh[0] || mainPlayerPokeCheck.Checked)
+                {
                     writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
+                }
 
                 autoRefresh[0] = autoRefresh[1] = false;
 
@@ -329,16 +327,6 @@ namespace Octoslots
 
                 writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
             }
-        }
-
-
-        private void checkBoxP1_CheckedChanged(object sender, EventArgs e)
-        {
-            //activates initial part of octohax in the menus
-            if (checkBoxP1.Checked)
-                writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
-            else
-                writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
         }
 
         public void getNames()
@@ -386,7 +374,7 @@ namespace Octoslots
 
                         //checks name before reading 
                         if (!(canName = validNamesChecker(b)))
-                            break;
+                            break; // cancel and exit the for loop
 
                         byte[] playersArray = new byte[0x16];
                         Array.Copy(b, 8, playersArray, 0, 0x16);
@@ -545,22 +533,24 @@ namespace Octoslots
             {
                 if (mainNameDelay >= 6)
                 {
-                    uint address = 0x12D1F336;
+                    uint address = 0x12D1F336 + octodiff;
                     uint length = (uint)miiName.Length;
-                    MemoryStream main = new MemoryStream();
-                    uint l = 256 - (256 - length);
+                    using (MemoryStream main = new MemoryStream())
+                    {
+                        uint l = 256 - (256 - length);
 
-                    //dumps data from memory
-                    Gecko.Dump(address, address + length, main);
+                        //dumps data from memory
+                        Gecko.Dump(address, address + length, main);
 
-                    //define dump to byte array
-                    main.Seek(0, SeekOrigin.Begin);
-                    byte[] b = main.GetBuffer();
-                    byte[] P1 = new byte[l];
-                    Array.Copy(b, P1, l);
+                        //define dump to byte array
+                        main.Seek(0, SeekOrigin.Begin);
+                        byte[] b = main.GetBuffer();
+                        byte[] P1 = new byte[l];
+                        Array.Copy(b, P1, l);
 
-                    if (P1.SequenceEqual(miiName))
-                        autoRefresh[0] = true;
+                        if (P1.SequenceEqual(miiName))
+                            autoRefresh[0] = true;
+                    }
                 }
 
                 mainNameDelay = mainNameDelay < 1337 ? mainNameDelay + 1 : mainNameDelay;
@@ -568,6 +558,9 @@ namespace Octoslots
             else
                 mainNameDelay = 0;
         }
+
+        //
+        private void mainPlayerPokeCheck_CheckedChanged(object sender, EventArgs e) { mainNameDelay = 6; }
 
         private void checkVerify()
         {
@@ -660,6 +653,7 @@ namespace Octoslots
                 checkBoxP7.Checked = true;
                 checkBoxP8.Checked = true;
             }
+
         }
 
         ////SINGLE PLAYER
@@ -671,78 +665,106 @@ namespace Octoslots
 
         public void singlePlayerPoke()
         {
-            uint all = 0;
-            uint inkling = 0;
-
-            if (autoRefresh[0])
-                Gecko.poke(0x12D1F364 + octodiff, 0x00000002);
-
-            for (uint i = 0; i < 3; i++)
+            if (Gecko.peek(0x106DFDB4) == 0x1CAB543C) //worried about the value, may differ between TCPGecko(s) -Yahya14
             {
-                //pokes all cpus to the inkling girl gender
-                if (SinglePlayerForm.SPchoice[0])
-                    Gecko.poke(0x12D1F460 + octodiff + (i * 0xFC), 0);
-                //pokes all cpus to all genders
-                else if (SinglePlayerForm.SPchoice[1])
-                    Gecko.poke(0x12D1F460 + octodiff + (i * 0xFC), all);
-                //pokes all cpus to the inkling boy gender
-                else if (SinglePlayerForm.SPchoice[2])
-                    Gecko.poke(0x12D1F460 + octodiff + (i * 0xFC), 0x1);
-
-                //pokes all cpus to both inkling genders only
-                else if (SinglePlayerForm.SPchoice[3])
-                    Gecko.poke(0x12D1F460 + octodiff + (i * 0xFC), inkling);
-
-                //for all gender function
-                all++;
-                //for inkling cpus function
-                if (inkling == 0 || inkling == 1)
-                    inkling = 1;
-                else
-                    inkling = 0;
-
-                if (SinglePlayerForm.SPGearPoke)
+                //choices based on SpringlePlayerForm combo box texts. Each string[][] is for each player and each combo box.
+                for (uint i = 0; i < 4; i++)
                 {
-                    if (Gecko.peek(0x106DFDB4) == 0x1CAB543C) //worried about the value, may differ between TCPGecko(s) -Yahya14
+                    switch (SinglePlayerForm.SPOctoSlot[i][0]) //[player number] [combobox number]
                     {
-                        //pokes player gear to Octoling gear
-                        Gecko.poke(0x12D1F384 + octodiff, 0x00006D60);
-                        Gecko.poke(0x12D1F3A0 + octodiff, 0x00006D60);
-                        Gecko.poke(0x12D1F3BC + octodiff, 0x00006D60);
+                        case "Inkling Girl":
+                            Gecko.poke(0x12D1F364 + (i * 0xFC) + octodiff, 0x00000000);
+                            break;
 
-                        if (SinglePlayerForm.SPchoice[0] || SinglePlayerForm.SPchoice[2] || SinglePlayerForm.SPchoice[3])
-                        {
-                            //pokes all Octoling slots to hero gear
-                            Gecko.poke(0x12D1F480 + octodiff + (i * 0xFC), 0x00006978);
-                            Gecko.poke(0x12D1F49C + octodiff + (i * 0xFC), 0x00006978);
-                            Gecko.poke(0x12D1F4B8 + octodiff + (i * 0xFC), 0x00006978);
-                            //swaps player and rival weapons
-                            Gecko.poke(0x12D1F374 + octodiff, 0x000007D0);
-                            Gecko.poke(0x12D1F378 + octodiff, 0x000007D0);
-                            Gecko.poke(0x12D1F470 + octodiff + (i * 0xFC), 0x000003E8);
-                            Gecko.poke(0x12D1F474 + octodiff + (i * 0xFC), 0x000003E8);
-                        }
+                        case "Inkling Boy":
+                            Gecko.poke(0x12D1F364 + (i * 0xFC) + octodiff, 0x00000001);
+                            break;
 
-                        else if (SinglePlayerForm.SPchoice[1])
-                        {
-                            //pokes Inkling girls and boys in Octoling slots to hero gear
-                            Gecko.poke(0x12D1F480 + octodiff, 0x00006978);
-                            Gecko.poke(0x12D1F49C + octodiff, 0x00006978);
-                            Gecko.poke(0x12D1F4B8 + octodiff, 0x00006978);
-                            Gecko.poke(0x12D1F57C + octodiff, 0x00006978);
-                            Gecko.poke(0x12D1F598 + octodiff, 0x00006978);
-                            Gecko.poke(0x12D1F5B4 + octodiff, 0x00006978);
+                        case "Octoling":
+                            Gecko.poke(0x12D1F364 + (i * 0xFC) + octodiff, 0x00000002);
+                            break;
+                    }
 
-                            Gecko.poke(0x12D1F374 + octodiff, 0x000007D0);
-                            Gecko.poke(0x12D1F378 + octodiff, 0x000007D0);
-                            Gecko.poke(0x12D1F470 + octodiff, 0x000003E8);
-                            Gecko.poke(0x12D1F474 + octodiff, 0x000003E8);
-                            Gecko.poke(0x12D1F56C + octodiff, 0x000003E8);
-                            Gecko.poke(0x12D1F570 + octodiff, 0x000003E8);
-                        }
+                    //Weapon
+                    switch (SinglePlayerForm.SPOctoSlot[i][1])
+                    {
+                        case "Hero Shot":
+                            if (i > 0) //for player 2 - 4
+                            {
+                                Gecko.poke(0x12D1F374 + (i * 0xFC) + octodiff, 0x000003E8);
+                                Gecko.poke(0x12D1F378 + (i * 0xFC) + octodiff, 0x000003E8);
+                            }
+                            break;
+
+                        case "Octo Shot":
+                            if (i == 0) //for player 1
+                            {
+                                Gecko.poke(0x12D1F374 + (i * 0xFC) + octodiff, 0x000007D0);
+                                Gecko.poke(0x12D1F378 + (i * 0xFC) + octodiff, 0x000007D0);
+                            }
+                            break;
+                    }
+
+                    //Head
+                    switch (SinglePlayerForm.SPOctoSlot[i][2])
+                    {
+                        case "Hero Suit Headgear":
+                            if (i > 0) //for player 2 - 4
+                            {
+                                Gecko.poke(0x12D1F3BC + (i * 0xFC) + octodiff, 0x00006978);
+                            }
+                            break;
+
+                        case "Octoling Goggles":
+                            if (i == 0) //for player 1
+                            {
+                                Gecko.poke(0x12D1F3BC + (i * 0xFC) + octodiff, 0x00006D60);
+                            }
+                            break;
+
+                        case "Elite Octoling Goggles":
+                            Gecko.poke(0x12D1F3BC + (i * 0xFC) + octodiff, 0x00006D61);
+                            break;
+                    }
+
+                    //Clothes
+                    switch (SinglePlayerForm.SPOctoSlot[i][3])
+                    {
+                        case "Hero Suit":
+                            if (i > 0) //for player 2 - 4
+                            {
+                                Gecko.poke(0x12D1F3A0 + (i * 0xFC) + octodiff, 0x00006978);
+                            }
+                            break;
+
+                        case "Octoling Armor":
+                            if (i == 0) //for player 1
+                            {
+                                Gecko.poke(0x12D1F3A0 + (i * 0xFC) + octodiff, 0x00006D60);
+                            }
+                            break;
+                    }
+
+                    //Shoes
+                    switch (SinglePlayerForm.SPOctoSlot[i][4])
+                    {
+                        case "Hero Shoes":
+                            if (i > 0) //for player 2 - 4
+                            {
+                                Gecko.poke(0x12D1F384 + (i * 0xFC) + octodiff, 0x00006978);
+                            }
+                            break;
+
+                        case "Octoling Boots":
+                            if (i == 0) //for player 1
+                            {
+                                Gecko.poke(0x12D1F384 + (i * 0xFC) + octodiff, 0x00006D60);
+                            }
+                            break;
                     }
                 }
             }
         }
     }
 }
+

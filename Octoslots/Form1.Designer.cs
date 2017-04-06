@@ -133,7 +133,6 @@
             this.checkBoxP1.Name = "checkBoxP1";
             this.toolTipP1.SetToolTip(this.checkBoxP1, resources.GetString("checkBoxP1.ToolTip"));
             this.checkBoxP1.UseVisualStyleBackColor = false;
-            this.checkBoxP1.CheckedChanged += new System.EventHandler(this.checkBoxP1_CheckedChanged);
             this.checkBoxP1.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP2
@@ -218,6 +217,7 @@
             this.mainPlayerPokeCheck.Name = "mainPlayerPokeCheck";
             this.toolTipP1.SetToolTip(this.mainPlayerPokeCheck, resources.GetString("mainPlayerPokeCheck.ToolTip"));
             this.mainPlayerPokeCheck.UseVisualStyleBackColor = true;
+            this.mainPlayerPokeCheck.CheckedChanged += new System.EventHandler(this.mainPlayerPokeCheck_CheckedChanged);
             // 
             // toggleGenderButton
             // 
