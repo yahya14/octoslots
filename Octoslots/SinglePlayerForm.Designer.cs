@@ -126,11 +126,13 @@
             // 
             // CBOctoSlot0Gender
             // 
+            this.CBOctoSlot0Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot0Gender.FormattingEnabled = true;
             this.CBOctoSlot0Gender.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot0Gender.Items"),
             resources.GetString("CBOctoSlot0Gender.Items1"),
-            resources.GetString("CBOctoSlot0Gender.Items2")});
+            resources.GetString("CBOctoSlot0Gender.Items2"),
+            resources.GetString("CBOctoSlot0Gender.Items3")});
             resources.ApplyResources(this.CBOctoSlot0Gender, "CBOctoSlot0Gender");
             this.CBOctoSlot0Gender.Name = "CBOctoSlot0Gender";
             this.CBOctoSlot0Gender.SelectedIndexChanged += new System.EventHandler(this.comboBoxPlayerGender_SelectedIndexChanged);
@@ -142,6 +144,7 @@
             // 
             // CBOctoSlot0Shoes
             // 
+            this.CBOctoSlot0Shoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot0Shoes.FormattingEnabled = true;
             this.CBOctoSlot0Shoes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot0Shoes.Items"),
@@ -152,6 +155,7 @@
             // 
             // CBOctoSlot0Clothes
             // 
+            this.CBOctoSlot0Clothes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot0Clothes.FormattingEnabled = true;
             this.CBOctoSlot0Clothes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot0Clothes.Items"),
@@ -177,6 +181,7 @@
             // 
             // CBOctoSlot0Head
             // 
+            this.CBOctoSlot0Head.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot0Head.FormattingEnabled = true;
             this.CBOctoSlot0Head.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot0Head.Items"),
@@ -188,6 +193,7 @@
             // 
             // CBOctoSlot0Weapon
             // 
+            this.CBOctoSlot0Weapon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot0Weapon.FormattingEnabled = true;
             this.CBOctoSlot0Weapon.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot0Weapon.Items"),
@@ -219,6 +225,7 @@
             // 
             // CBOctoSlot1Gender
             // 
+            this.CBOctoSlot1Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot1Gender.FormattingEnabled = true;
             this.CBOctoSlot1Gender.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot1Gender.Items"),
@@ -235,6 +242,7 @@
             // 
             // CBOctoSlot1Shoes
             // 
+            this.CBOctoSlot1Shoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot1Shoes.FormattingEnabled = true;
             this.CBOctoSlot1Shoes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot1Shoes.Items"),
@@ -245,6 +253,7 @@
             // 
             // CBOctoSlot1Clothes
             // 
+            this.CBOctoSlot1Clothes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot1Clothes.FormattingEnabled = true;
             this.CBOctoSlot1Clothes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot1Clothes.Items"),
@@ -270,6 +279,7 @@
             // 
             // CBOctoSlot1Head
             // 
+            this.CBOctoSlot1Head.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot1Head.FormattingEnabled = true;
             this.CBOctoSlot1Head.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot1Head.Items"),
@@ -281,6 +291,7 @@
             // 
             // CBOctoSlot1Weapon
             // 
+            this.CBOctoSlot1Weapon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot1Weapon.FormattingEnabled = true;
             this.CBOctoSlot1Weapon.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot1Weapon.Items"),
@@ -312,6 +323,7 @@
             // 
             // CBOctoSlot2Gender
             // 
+            this.CBOctoSlot2Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot2Gender.FormattingEnabled = true;
             this.CBOctoSlot2Gender.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot2Gender.Items"),
@@ -328,6 +340,7 @@
             // 
             // CBOctoSlot2Shoes
             // 
+            this.CBOctoSlot2Shoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot2Shoes.FormattingEnabled = true;
             this.CBOctoSlot2Shoes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot2Shoes.Items"),
@@ -338,6 +351,7 @@
             // 
             // CBOctoSlot2Clothes
             // 
+            this.CBOctoSlot2Clothes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot2Clothes.FormattingEnabled = true;
             this.CBOctoSlot2Clothes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot2Clothes.Items"),
@@ -363,6 +377,7 @@
             // 
             // CBOctoSlot2Head
             // 
+            this.CBOctoSlot2Head.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot2Head.FormattingEnabled = true;
             this.CBOctoSlot2Head.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot2Head.Items"),
@@ -374,6 +389,7 @@
             // 
             // CBOctoSlot2Weapon
             // 
+            this.CBOctoSlot2Weapon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot2Weapon.FormattingEnabled = true;
             this.CBOctoSlot2Weapon.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot2Weapon.Items"),
@@ -405,6 +421,7 @@
             // 
             // CBOctoSlot3Gender
             // 
+            this.CBOctoSlot3Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot3Gender.FormattingEnabled = true;
             this.CBOctoSlot3Gender.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot3Gender.Items"),
@@ -421,6 +438,7 @@
             // 
             // CBOctoSlot3Shoes
             // 
+            this.CBOctoSlot3Shoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot3Shoes.FormattingEnabled = true;
             this.CBOctoSlot3Shoes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot3Shoes.Items"),
@@ -431,6 +449,7 @@
             // 
             // CBOctoSlot3Clothes
             // 
+            this.CBOctoSlot3Clothes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot3Clothes.FormattingEnabled = true;
             this.CBOctoSlot3Clothes.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot3Clothes.Items"),
@@ -456,6 +475,7 @@
             // 
             // CBOctoSlot3Head
             // 
+            this.CBOctoSlot3Head.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot3Head.FormattingEnabled = true;
             this.CBOctoSlot3Head.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot3Head.Items"),
@@ -467,6 +487,7 @@
             // 
             // CBOctoSlot3Weapon
             // 
+            this.CBOctoSlot3Weapon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOctoSlot3Weapon.FormattingEnabled = true;
             this.CBOctoSlot3Weapon.Items.AddRange(new object[] {
             resources.GetString("CBOctoSlot3Weapon.Items"),

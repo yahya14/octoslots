@@ -150,254 +150,16 @@ be disabled when this window closes.</value>
   <data name="&gt;&gt;noteLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabGearAndWeapons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 18</value>
-  </data>
-  <data name="tabGearAndWeapons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 168</value>
-  </data>
-  <data name="tabGearAndWeapons.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tabGearAndWeapons.Name" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabGearAndWeapons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabGearAndWeapons.Parent" xml:space="preserve">
-    <value>OctogroupBox</value>
-  </data>
-  <data name="&gt;&gt;tabGearAndWeapons.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="OctogroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 1</value>
-  </data>
-  <data name="OctogroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 192</value>
-  </data>
-  <data name="OctogroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="OctogroupBox.Text" xml:space="preserve">
-    <value>Gear and Weapons</value>
-  </data>
-  <data name="&gt;&gt;OctogroupBox.Name" xml:space="preserve">
-    <value>OctogroupBox</value>
-  </data>
-  <data name="&gt;&gt;OctogroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OctogroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;OctogroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Gender.Name" xml:space="preserve">
-    <value>CBOctoSlot0Gender</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Gender.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Gender.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Gender.Name" xml:space="preserve">
-    <value>labelOctoSlot0Gender</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Gender.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Gender.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Shoes.Name" xml:space="preserve">
-    <value>CBOctoSlot0Shoes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Shoes.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Shoes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Clothes.Name" xml:space="preserve">
-    <value>CBOctoSlot0Clothes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Clothes.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Clothes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Shoes.Name" xml:space="preserve">
-    <value>labelOctoSlot0Shoes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Shoes.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Shoes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Clothes.Name" xml:space="preserve">
-    <value>labelOctoSlot0Clothes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Clothes.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Clothes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Head.Name" xml:space="preserve">
-    <value>labelOctoSlot0Head</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Head.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Head.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Head.Name" xml:space="preserve">
-    <value>CBOctoSlot0Head</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Head.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Head.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Weapon.Name" xml:space="preserve">
-    <value>CBOctoSlot0Weapon</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Weapon.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot0Weapon.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Weapon.Name" xml:space="preserve">
-    <value>labelOctoSlot0Weapon</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Weapon.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot0Weapon.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 142</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Agent 3</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabGearAndWeapons</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="CBOctoSlot0Gender.Items" xml:space="preserve">
-    <value>Inkling Girl</value>
+    <value>Default</value>
   </data>
   <data name="CBOctoSlot0Gender.Items1" xml:space="preserve">
-    <value>Inkling Boy</value>
+    <value>Inkling Girl</value>
   </data>
   <data name="CBOctoSlot0Gender.Items2" xml:space="preserve">
+    <value>Inkling Boy</value>
+  </data>
+  <data name="CBOctoSlot0Gender.Items3" xml:space="preserve">
     <value>Octoling</value>
   </data>
   <data name="CBOctoSlot0Gender.Location" type="System.Drawing.Point, System.Drawing">
@@ -408,9 +170,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot0Gender.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
-  </data>
-  <data name="CBOctoSlot0Gender.Text" xml:space="preserve">
-    <value>Inkling Girl</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot0Gender.Name" xml:space="preserve">
     <value>CBOctoSlot0Gender</value>
@@ -466,9 +225,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot0Shoes.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="CBOctoSlot0Shoes.Text" xml:space="preserve">
-    <value>Hero Shoes</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot0Shoes.Name" xml:space="preserve">
     <value>CBOctoSlot0Shoes</value>
   </data>
@@ -496,9 +252,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot0Clothes.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="CBOctoSlot0Clothes.Text" xml:space="preserve">
-    <value>Hero Suit</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot0Clothes.Name" xml:space="preserve">
     <value>CBOctoSlot0Clothes</value>
   </data>
@@ -514,6 +267,7 @@ be disabled when this window closes.</value>
   <data name="labelOctoSlot0Shoes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelOctoSlot0Shoes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -619,9 +373,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot0Head.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="CBOctoSlot0Head.Text" xml:space="preserve">
-    <value>Hero Suit Headgear</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot0Head.Name" xml:space="preserve">
     <value>CBOctoSlot0Head</value>
   </data>
@@ -648,9 +399,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot0Weapon.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="CBOctoSlot0Weapon.Text" xml:space="preserve">
-    <value>Hero Shot</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot0Weapon.Name" xml:space="preserve">
     <value>CBOctoSlot0Weapon</value>
@@ -694,152 +442,32 @@ be disabled when this window closes.</value>
   <data name="&gt;&gt;labelOctoSlot0Weapon.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;CBOctoSlot1Gender.Name" xml:space="preserve">
-    <value>CBOctoSlot1Gender</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Gender.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Gender.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Gender.Name" xml:space="preserve">
-    <value>labelOctoSlot1Gender</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Gender.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Gender.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Shoes.Name" xml:space="preserve">
-    <value>CBOctoSlot1Shoes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Shoes.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Shoes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Clothes.Name" xml:space="preserve">
-    <value>CBOctoSlot1Clothes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Clothes.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Clothes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Shoes.Name" xml:space="preserve">
-    <value>labelOctoSlot1Shoes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Shoes.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Shoes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Clothes.Name" xml:space="preserve">
-    <value>labelOctoSlot1Clothes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Clothes.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Clothes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Head.Name" xml:space="preserve">
-    <value>labelOctoSlot1Head</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Head.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Head.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Head.Name" xml:space="preserve">
-    <value>CBOctoSlot1Head</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Head.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Head.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Weapon.Name" xml:space="preserve">
-    <value>CBOctoSlot1Weapon</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Weapon.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot1Weapon.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Weapon.Name" xml:space="preserve">
-    <value>labelOctoSlot1Weapon</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Weapon.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot1Weapon.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 142</value>
   </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Octoslot 1</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Agent 3</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
     <value>tabGearAndWeapons</value>
   </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="CBOctoSlot1Gender.Items" xml:space="preserve">
     <value>Inkling Girl</value>
@@ -858,9 +486,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot1Gender.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
-  </data>
-  <data name="CBOctoSlot1Gender.Text" xml:space="preserve">
-    <value>Octoling</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot1Gender.Name" xml:space="preserve">
     <value>CBOctoSlot1Gender</value>
@@ -919,9 +544,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot1Shoes.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
-  <data name="CBOctoSlot1Shoes.Text" xml:space="preserve">
-    <value>Octoling Boots</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot1Shoes.Name" xml:space="preserve">
     <value>CBOctoSlot1Shoes</value>
   </data>
@@ -948,9 +570,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot1Clothes.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
-  </data>
-  <data name="CBOctoSlot1Clothes.Text" xml:space="preserve">
-    <value>Octoling Armor</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot1Clothes.Name" xml:space="preserve">
     <value>CBOctoSlot1Clothes</value>
@@ -1072,9 +691,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot1Head.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="CBOctoSlot1Head.Text" xml:space="preserve">
-    <value>Octoling Goggles</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot1Head.Name" xml:space="preserve">
     <value>CBOctoSlot1Head</value>
   </data>
@@ -1101,9 +717,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot1Weapon.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
-  </data>
-  <data name="CBOctoSlot1Weapon.Text" xml:space="preserve">
-    <value>Octoshot</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot1Weapon.Name" xml:space="preserve">
     <value>CBOctoSlot1Weapon</value>
@@ -1147,149 +760,32 @@ be disabled when this window closes.</value>
   <data name="&gt;&gt;labelOctoSlot1Weapon.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;CBOctoSlot2Gender.Name" xml:space="preserve">
-    <value>CBOctoSlot2Gender</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Gender.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Gender.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Gender.Name" xml:space="preserve">
-    <value>labelOctoSlot2Gender</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Gender.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Gender.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Shoes.Name" xml:space="preserve">
-    <value>CBOctoSlot2Shoes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Shoes.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Shoes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Clothes.Name" xml:space="preserve">
-    <value>CBOctoSlot2Clothes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Clothes.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Clothes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Shoes.Name" xml:space="preserve">
-    <value>labelOctoSlot2Shoes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Shoes.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Shoes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Clothes.Name" xml:space="preserve">
-    <value>labelOctoSlot2Clothes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Clothes.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Clothes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Head.Name" xml:space="preserve">
-    <value>labelOctoSlot2Head</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Head.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Head.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Head.Name" xml:space="preserve">
-    <value>CBOctoSlot2Head</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Head.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Head.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Weapon.Name" xml:space="preserve">
-    <value>CBOctoSlot2Weapon</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Weapon.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot2Weapon.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Weapon.Name" xml:space="preserve">
-    <value>labelOctoSlot2Weapon</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Weapon.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot2Weapon.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 142</value>
   </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Octoslot 2</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Octoslot 1</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
     <value>tabGearAndWeapons</value>
   </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="CBOctoSlot2Gender.Items" xml:space="preserve">
     <value>Inkling Girl</value>
@@ -1308,9 +804,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot2Gender.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
-  </data>
-  <data name="CBOctoSlot2Gender.Text" xml:space="preserve">
-    <value>Octoling</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot2Gender.Name" xml:space="preserve">
     <value>CBOctoSlot2Gender</value>
@@ -1369,9 +862,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot2Shoes.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="CBOctoSlot2Shoes.Text" xml:space="preserve">
-    <value>Octoling Boots</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot2Shoes.Name" xml:space="preserve">
     <value>CBOctoSlot2Shoes</value>
   </data>
@@ -1398,9 +888,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot2Clothes.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
-  </data>
-  <data name="CBOctoSlot2Clothes.Text" xml:space="preserve">
-    <value>Octoling Armor</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot2Clothes.Name" xml:space="preserve">
     <value>CBOctoSlot2Clothes</value>
@@ -1522,9 +1009,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot2Head.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="CBOctoSlot2Head.Text" xml:space="preserve">
-    <value>Octoling Goggles</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot2Head.Name" xml:space="preserve">
     <value>CBOctoSlot2Head</value>
   </data>
@@ -1551,9 +1035,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot2Weapon.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
-  </data>
-  <data name="CBOctoSlot2Weapon.Text" xml:space="preserve">
-    <value>Octoshot</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot2Weapon.Name" xml:space="preserve">
     <value>CBOctoSlot2Weapon</value>
@@ -1597,149 +1078,29 @@ be disabled when this window closes.</value>
   <data name="&gt;&gt;labelOctoSlot2Weapon.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;CBOctoSlot3Gender.Name" xml:space="preserve">
-    <value>CBOctoSlot3Gender</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Gender.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Gender.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Gender.Name" xml:space="preserve">
-    <value>labelOctoSlot3Gender</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Gender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Gender.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Gender.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Shoes.Name" xml:space="preserve">
-    <value>CBOctoSlot3Shoes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Shoes.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Shoes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Clothes.Name" xml:space="preserve">
-    <value>CBOctoSlot3Clothes</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Clothes.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Clothes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Shoes.Name" xml:space="preserve">
-    <value>labelOctoSlot3Shoes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Shoes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Shoes.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Shoes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Clothes.Name" xml:space="preserve">
-    <value>labelOctoSlot3Clothes</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Clothes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Clothes.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Clothes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Head.Name" xml:space="preserve">
-    <value>labelOctoSlot3Head</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Head.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Head.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Head.Name" xml:space="preserve">
-    <value>CBOctoSlot3Head</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Head.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Head.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Weapon.Name" xml:space="preserve">
-    <value>CBOctoSlot3Weapon</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Weapon.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;CBOctoSlot3Weapon.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Weapon.Name" xml:space="preserve">
-    <value>labelOctoSlot3Weapon</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Weapon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Weapon.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;labelOctoSlot3Weapon.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 142</value>
   </data>
-  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Octoslot 3</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Octoslot 2</value>
   </data>
-  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
-    <value>tabPage4</value>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
     <value>tabGearAndWeapons</value>
   </data>
-  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="CBOctoSlot3Gender.Items" xml:space="preserve">
     <value>Inkling Girl</value>
@@ -1758,9 +1119,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot3Gender.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
-  </data>
-  <data name="CBOctoSlot3Gender.Text" xml:space="preserve">
-    <value>Octoling</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot3Gender.Name" xml:space="preserve">
     <value>CBOctoSlot3Gender</value>
@@ -1819,9 +1177,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot3Shoes.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="CBOctoSlot3Shoes.Text" xml:space="preserve">
-    <value>Octoling Boots</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot3Shoes.Name" xml:space="preserve">
     <value>CBOctoSlot3Shoes</value>
   </data>
@@ -1848,9 +1203,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot3Clothes.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
-  </data>
-  <data name="CBOctoSlot3Clothes.Text" xml:space="preserve">
-    <value>Octoling Armor</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot3Clothes.Name" xml:space="preserve">
     <value>CBOctoSlot3Clothes</value>
@@ -1972,9 +1324,6 @@ be disabled when this window closes.</value>
   <data name="CBOctoSlot3Head.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
-  <data name="CBOctoSlot3Head.Text" xml:space="preserve">
-    <value>Octoling Goggles</value>
-  </data>
   <data name="&gt;&gt;CBOctoSlot3Head.Name" xml:space="preserve">
     <value>CBOctoSlot3Head</value>
   </data>
@@ -2001,9 +1350,6 @@ be disabled when this window closes.</value>
   </data>
   <data name="CBOctoSlot3Weapon.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
-  </data>
-  <data name="CBOctoSlot3Weapon.Text" xml:space="preserve">
-    <value>Octoshot</value>
   </data>
   <data name="&gt;&gt;CBOctoSlot3Weapon.Name" xml:space="preserve">
     <value>CBOctoSlot3Weapon</value>
@@ -2046,6 +1392,75 @@ be disabled when this window closes.</value>
   </data>
   <data name="&gt;&gt;labelOctoSlot3Weapon.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 142</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Octoslot 3</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabGearAndWeapons</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabGearAndWeapons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 18</value>
+  </data>
+  <data name="tabGearAndWeapons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 168</value>
+  </data>
+  <data name="tabGearAndWeapons.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tabGearAndWeapons.Name" xml:space="preserve">
+    <value>tabGearAndWeapons</value>
+  </data>
+  <data name="&gt;&gt;tabGearAndWeapons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabGearAndWeapons.Parent" xml:space="preserve">
+    <value>OctogroupBox</value>
+  </data>
+  <data name="&gt;&gt;tabGearAndWeapons.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="OctogroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="OctogroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 192</value>
+  </data>
+  <data name="OctogroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="OctogroupBox.Text" xml:space="preserve">
+    <value>Gear and Weapons</value>
+  </data>
+  <data name="&gt;&gt;OctogroupBox.Name" xml:space="preserve">
+    <value>OctogroupBox</value>
+  </data>
+  <data name="&gt;&gt;OctogroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OctogroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OctogroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

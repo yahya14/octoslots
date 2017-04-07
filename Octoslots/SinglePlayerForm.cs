@@ -13,16 +13,16 @@ namespace Octoslots
         public static bool[] SPchoice = new bool[4];
         public static string[][] SPOctoSlot = new string[4][]
         {
-            new string[5] {"Inkling Girl", "Hero Shot", "Hero Suit Headgear", "Hero Suit", "Hero Shoes" }, //Player 1 (main player)
-            new string[5] {"Octoling", "Octo Shot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }, //Player 2 (octoling 1)
-            new string[5] {"Octoling", "Octo Shot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }, //Player 3 (octoling 2)
-            new string[5] {"Octoling", "Octo Shot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }  //Player 4 (octoling 3)
+            new string[5] {"Default", "Hero Shot", "Hero Suit Headgear", "Hero Suit", "Hero Shoes" }, //Player 1 (main player)
+            new string[5] {"Octoling", "Octoshot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }, //Player 2 (octoling 1)
+            new string[5] {"Octoling", "Octoshot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }, //Player 3 (octoling 2)
+            new string[5] {"Octoling", "Octoshot", "Octoling Goggles", "Octoling Armor", "Octoling Boots" }  //Player 4 (octoling 3)
         };
 
         public SinglePlayerForm()
         {
             InitializeComponent();
-            Gecko = Form1.Gecko;
+            Gecko = Main.Gecko;
             SPPoke = true;
 
             //loads combo boxes upon opening
