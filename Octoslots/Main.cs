@@ -110,17 +110,6 @@ namespace Octoslots
                 check.ShowDialog(this);
         }
 
-        private void writeString(uint address, string s)
-        {
-            writeString(address, s, s.Length);
-        }
-        private void writeString(uint address, string s, int len)
-        {
-            byte[] b = Encoding.GetEncoding("iso-8859-1").GetBytes(s);
-            using (MemoryStream stream = new MemoryStream(b))
-                Gecko.Upload(address, address + (uint)len, stream);
-        }
-
         private void IPBox_KeyDown(object sender, KeyEventArgs e) //User can press Enter to connect
         {
             if (e.KeyCode.ToString() == "Return")
@@ -194,7 +183,7 @@ namespace Octoslots
                 sfxEliteRadio_CheckedChanged(sender, e);
 
             //Fixes the player Octoling sfx
-            writeString(0x105EC6BE, "Other", 5);
+            patchOctosfx(1);
 
             //starts poking timer
             getNames();
@@ -236,17 +225,44 @@ namespace Octoslots
             SinglePlayerForm SP = new SinglePlayerForm();
         }
 
+        private void patchOctosfx(int i)
+        {
+            if (i < 1)
+            {
+                Gecko.poke(0x105EC6BC, 0x65724374);
+                Gecko.poke(0x105EC6C0, 0x726C0000);
+            }
+            else
+            {
+                Gecko.poke(0x105EC6BC, 0x65724F74);
+                Gecko.poke(0x105EC6C0, 0x68657200);
+            }
+        }
+
+        private void patchOctohax(int i)
+        {
+            if (i < 1)
+            {
+                Gecko.poke(0x105EF3B0, 0x506C6179);
+                Gecko.poke(0x105EF3B4, 0x65723030);
+            }
+            else
+            {
+                Gecko.poke(0x105EF3B0, 0x52697661);
+                Gecko.poke(0x105EF3B4, 0x6C303000);
+            }
+        }
+
         private void disconnectBox_Click(object sender, EventArgs e)
         {
-            writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
             Disconnect();
             combineToggle = false;
         }
 
         private void Disconnect()
         {
-            //reverts Octoling sfx
-            writeString(0x105EC6BE, "Ctrl", 5);
+            patchOctohax(0); //reverts safe octohax
+            patchOctosfx(0); //reverts Octoling sfx
             autoRefreshTimer.Stop(); //stops poking timer
             Gecko.Disconnect();
             hold();
@@ -311,7 +327,7 @@ namespace Octoslots
 
                 if (autoRefresh[0] || mainPlayerPokeCheck.Checked)
                 {
-                    writeString(0x105EF3B0, "Rival00", 8); //pokes safe octohax
+                    patchOctohax(1); //pokes safe octohax
                 }
 
                 autoRefresh[0] = autoRefresh[1] = false;
@@ -325,7 +341,7 @@ namespace Octoslots
                 menuCheck[2] = menuCheck[0];
                 menuCheck[3] = menuCheck[1];
 
-                writeString(0x105EF3B0, "Player00", 8); //reverts safe octohax
+                patchOctohax(0); //reverts safe octohax
             }
         }
 
@@ -665,7 +681,7 @@ namespace Octoslots
 
         public void singlePlayerPoke()
         {
-            if (Gecko.peek(0x106DFDB4) == 0x1CAB543C) //worried about the value, may differ between TCPGecko(s) -Yahya14
+            if (Gecko.peek(0x106E5318) == 0x00000000) //using a new address that's hopefully more consistant -Bkool
             {
                 //choices based on SpringlePlayerForm combo box texts. Each string[][] is for each player and each combo box.
                 for (uint i = 0; i < 4; i++)
