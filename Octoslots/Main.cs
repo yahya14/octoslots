@@ -72,6 +72,7 @@ namespace Octoslots
         public uint mainNameDelay = 1337;
         public uint SquadAddr, OnlineAddr, PBAddr, FestAddr;
         public byte[] miiName;
+        public byte[] P1NameChecked = new byte[0x14];
 
         // auto refresh tied to the checkboxes (1st player to 8th player)
         public static bool[] autoRefresh = new bool[8];
@@ -279,15 +280,15 @@ namespace Octoslots
             //syncs checks with the bool array
             checkVerify();
 
+            //auto pokes main player when checked
+            if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
+                mainNameChecker();
+
             //switches between octoling models in menus
             menuOctohax();
 
             //reads names to display them on the gui
             getNames();
-
-            //auto pokes main player when checked
-            if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
-                mainNameChecker();
             
             //switch 
             if (SinglePlayerForm.SPPoke == false)
@@ -321,41 +322,43 @@ namespace Octoslots
 
         private void menuOctohax()
         {
-            //checks menu values for octohax
-            menuCheck[0] = Gecko.peek(0x106E093C);
-            menuCheck[1] = Gecko.peek(0x10707EA0);
-            if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])) && (mainPlayerPokeCheck.Checked || autoRefresh[0] || autoRefresh[1]))
+            if (mainPlayerPokeCheck.Checked || autoRefresh[0] || autoRefresh[1])
             {
-                //for activating only when the value changes
-                menuCheck[2] = menuCheck[0];
-                menuCheck[3] = menuCheck[1];
-
-                if (autoRefresh[0] || mainPlayerPokeCheck.Checked)
+                //checks menu values for octohax
+                menuCheck[0] = Gecko.peek(0x106E093C);
+                menuCheck[1] = Gecko.peek(0x10707EA0);
+                if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])))
                 {
-                    patchOctohax(1); //pokes safe octohax
+                    //for activating only when the value changes
+                    menuCheck[2] = menuCheck[0];
+                    menuCheck[3] = menuCheck[1];
+
+                    if (autoRefresh[0] || mainPlayerPokeCheck.Checked)
+                    {
+                        patchOctohax(1); //pokes safe octohax
+                    }
+
+                    autoRefresh[0] = autoRefresh[1] = false;
+
+                    //for Battle Dojo (experimental)
+                    Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
+                    Gecko.poke(0x12D1F460 + octodiff, 0x00000000); //P2
                 }
+                else if (menuCheck[0] != menuCheck[2])
+                {
+                    menuCheck[2] = menuCheck[0];
+                    menuCheck[3] = menuCheck[1];
 
-                autoRefresh[0] = autoRefresh[1] = false;
-
-                //for Battle Dojo (experimental)
-                Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
-                Gecko.poke(0x12D1F460 + octodiff, 0x00000000); //P2
-            }
-            else if (menuCheck[0] != menuCheck[2])
-            {
-                menuCheck[2] = menuCheck[0];
-                menuCheck[3] = menuCheck[1];
-
-                patchOctohax(0); //reverts safe octohax
+                    patchOctohax(0); //reverts safe octohax
+                }
             }
         }
 
         public void getNames()
         {
             //delayed timer note: every name validated has no delay, every name failed to validate will have delay based the value of the next line.
-            if (delayRead >= 1) //change the delay here
+            if (delayRead >= 2) //set delay period
             {
-
                 if (modeComboBox.Text == "Squad Battle") //broken
                 {
                     nameDump(SquadAddr, 0x460, 0x9C);
@@ -373,7 +376,7 @@ namespace Octoslots
                 //All broken addresses need pointers for it, which I have no possesion of yet.
             }
             else
-                delayRead = delayRead >= 1 ? delayRead : delayRead + 1;
+                delayRead = delayRead >= 2 ? delayRead : delayRead + 1;
         }
 
         //DUMP
@@ -387,7 +390,7 @@ namespace Octoslots
                     using (MemoryStream Player = new MemoryStream())
                     {
                         //dumps data from memory
-                        Gecko.Dump(address + (i * nameOffset), address + (i * nameOffset) + 0x1E, Player);
+                        Gecko.Dump(address + (i * nameOffset), address + (i * nameOffset) + 0x18, Player);
 
                         //define dump to byte array
                         Player.Seek(0, SeekOrigin.Begin);
@@ -395,7 +398,10 @@ namespace Octoslots
 
                         //checks name before reading 
                         if (!(canName = validNamesChecker(b)))
+                        {
+                            delayRead = 0;
                             break; // cancel and exit the for loop
+                        }
 
                         byte[] playersArray = new byte[0x16];
                         Array.Copy(b, 8, playersArray, 0, 0x16);
@@ -430,7 +436,7 @@ namespace Octoslots
             //set no loop delay with every successful read (except the 0x12 range)
             if (modeComboBox.Text == "Classic Offsets")
                 delayRead = 0;
-            else
+            else if (canName)
                 delayRead = 1337;
         }
 
@@ -546,6 +552,9 @@ namespace Octoslots
                 mainPlayerPokeCheck.Enabled = false;
             else if (!connectBox.Enabled)
                 mainPlayerPokeCheck.Enabled = true;
+
+            if (mainPlayerPokeCheck.Checked && mainPlayerPokeCheck.Enabled)
+                mainNameDelay = 7;
         }
 
         private void mainNameChecker()
@@ -561,27 +570,29 @@ namespace Octoslots
 
             if (!canName)
             {
-                if (mainNameDelay >= 6)
+                if (mainNameDelay >= 7)
                 {
                     uint address = 0x12D1F336 + octodiff;
                     uint length = (uint)miiName.Length;
+                    uint l = 256 - (256 - length);
+
                     using (MemoryStream main = new MemoryStream())
                     {
-                        uint l = 256 - (256 - length);
-
                         //dumps data from memory
                         Gecko.Dump(address, address + length, main);
 
                         //define dump to byte array
                         main.Seek(0, SeekOrigin.Begin);
                         byte[] b = main.GetBuffer();
-                        byte[] P1 = new byte[l];
-                        Array.Copy(b, P1, l);
-
-                        if (P1.SequenceEqual(miiName))
-                            autoRefresh[0] = true;
+                        P1NameChecked = new byte[l];
+                        Array.Copy(b, P1NameChecked, l);
                     }
+
+                    mainNameDelay = 3;
                 }
+               
+                if (P1NameChecked.SequenceEqual(miiName))
+                    autoRefresh[0] = true;
 
                 mainNameDelay = mainNameDelay < 1337 ? mainNameDelay + 1 : mainNameDelay;
             }
@@ -590,7 +601,7 @@ namespace Octoslots
         }
 
         //
-        private void mainPlayerPokeCheck_CheckedChanged(object sender, EventArgs e) { mainNameDelay = 6; }
+        private void mainPlayerPokeCheck_CheckedChanged(object sender, EventArgs e) { mainNameDelay = 7; }
 
         private void checkVerify()
         {

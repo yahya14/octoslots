@@ -14,10 +14,10 @@ namespace Octoslots
     
         public static void Load()
         {
-            if (!File.Exists("Configuration.xml"))
+            if (!File.Exists("OctoslotsConfig.xml"))
             {
                 currentConfig = new Configuration();
-                currentConfig.lastIp = "";
+                currentConfig.lastIp = "192.168.1.1";
 
                 Save();
             }
@@ -25,14 +25,23 @@ namespace Octoslots
             {
                 using (FileStream stream = File.OpenRead("OctoslotsConfig.xml"))
                 {
-                    currentConfig = (Configuration)serializer.Deserialize(stream);
+                    try
+                    {
+                        currentConfig = (Configuration)serializer.Deserialize(stream);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        stream.Close();
+                        File.Delete("OctoslotsConfig.xml");
+                        Load();
+                    }
                 }
             }
         }
 
         public static void Save()
         {
-            File.Delete("Configuration.xml");
+            File.Delete("OctoslotsConfig.xml");
             using (FileStream writer = File.OpenWrite("OctoslotsConfig.xml"))
             {
                 serializer.Serialize(writer, currentConfig);

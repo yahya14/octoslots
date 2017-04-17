@@ -94,7 +94,7 @@
             // 
             // autoRefreshTimer
             // 
-            this.autoRefreshTimer.Interval = 1234;
+            this.autoRefreshTimer.Interval = 1250;
             this.autoRefreshTimer.Tick += new System.EventHandler(this.autoRefreshTimer_Tick);
             // 
             // checkBoxP3
