@@ -167,6 +167,7 @@ namespace Octoslots
             {
                 disconnectBox_Click(sender, e);
                 MessageBox.Show(Properties.Strings.FIND_DIFF_FAILED_TEXT, "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             //save IP to xml
@@ -191,6 +192,10 @@ namespace Octoslots
 
             //get player's mii name (WILL be used when applicable on GUI)
             miiName = yourMiiName();
+
+            //enable octohax if first player is checked
+            if (checkBoxP1.Checked)
+                patchOctohax(1);
         }
 
         public void load()
@@ -470,6 +475,15 @@ namespace Octoslots
             checkBoxP1.Text = "  " + Encoding.BigEndianUnicode.GetString(name[0]);
         }
 
+        //enables/disables octohax when first player is checked
+        private void checkBoxP1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxP1.Checked)
+                patchOctohax(1);
+            else
+                patchOctohax(0);
+        }
+
         //squads have 3 address since it's dynamic (un-used)
         public void switchSquadAddr()
         {
@@ -593,54 +607,48 @@ namespace Octoslots
         //patches sound pack for normal octoling sfx
         private void sfxNormalRadio_CheckedChanged(object sender, EventArgs e)
         {
-            if (Gecko.peek(0x39737C94) == 0x616C4256)
+            if (sfxNormalRadio.Checked || sfxCombineRadio.Checked)
             {
-                if (sfxNormalRadio.Checked || sfxCombineRadio.Checked)
-                {
-                    Gecko.poke(0x39737C94, 0x616C4156);
-                    Gecko.poke(0x39737CA8, 0x616C4156);
-                    Gecko.poke(0x39737CBC, 0x616C4156);
-                    Gecko.poke(0x39737CD0, 0x616C4156);
-                    Gecko.poke(0x39737CE4, 0x76616C41);
-                    Gecko.poke(0x39737CFC, 0x41566F69);
-                    Gecko.poke(0x39737D20, 0x76616C41);
-                    Gecko.poke(0x39737D34, 0x6C41566F);
-                    Gecko.poke(0x39737D44, 0x76616C41);
-                    Gecko.poke(0x39737D58, 0x6C41566F);
-                    Gecko.poke(0x39737D68, 0x76616C41);
-                    Gecko.poke(0x39737D7C, 0x616C4156);
-                    Gecko.poke(0x39737D90, 0x6C41566F);
-                    Gecko.poke(0x39737DA4, 0x41566F69);
-                    Gecko.poke(0x39737DB4, 0x616C4156);
-                    Gecko.poke(0x39737DC8, 0x41566F69);
-                }
+                Gecko.poke(0x39737C94, 0x616C4156);
+                Gecko.poke(0x39737CA8, 0x616C4156);
+                Gecko.poke(0x39737CBC, 0x616C4156);
+                Gecko.poke(0x39737CD0, 0x616C4156);
+                Gecko.poke(0x39737CE4, 0x76616C41);
+                Gecko.poke(0x39737CFC, 0x41566F69);
+                Gecko.poke(0x39737D20, 0x76616C41);
+                Gecko.poke(0x39737D34, 0x6C41566F);
+                Gecko.poke(0x39737D44, 0x76616C41);
+                Gecko.poke(0x39737D58, 0x6C41566F);
+                Gecko.poke(0x39737D68, 0x76616C41);
+                Gecko.poke(0x39737D7C, 0x616C4156);
+                Gecko.poke(0x39737D90, 0x6C41566F);
+                Gecko.poke(0x39737DA4, 0x41566F69);
+                Gecko.poke(0x39737DB4, 0x616C4156);
+                Gecko.poke(0x39737DC8, 0x41566F69);
             }
         }
 
         //patches sound pack for elite octoling sfx
         private void sfxEliteRadio_CheckedChanged(object sender, EventArgs e)
         {
-            if (Gecko.peek(0x39737C94) == 0x616C4156)
+            if (sfxEliteRadio.Checked || sfxCombineRadio.Checked)
             {
-                if (sfxEliteRadio.Checked || sfxCombineRadio.Checked)
-                {
-                    Gecko.poke(0x39737C94, 0x616C4256);
-                    Gecko.poke(0x39737CA8, 0x616C4256);
-                    Gecko.poke(0x39737CBC, 0x616C4256);
-                    Gecko.poke(0x39737CD0, 0x616C4256);
-                    Gecko.poke(0x39737CE4, 0x76616C42);
-                    Gecko.poke(0x39737CFC, 0x42566F69);
-                    Gecko.poke(0x39737D20, 0x76616C42);
-                    Gecko.poke(0x39737D34, 0x6C42566F);
-                    Gecko.poke(0x39737D44, 0x76616C42);
-                    Gecko.poke(0x39737D58, 0x6C42566F);
-                    Gecko.poke(0x39737D68, 0x76616C42);
-                    Gecko.poke(0x39737D7C, 0x616C4256);
-                    Gecko.poke(0x39737D90, 0x6C42566F);
-                    Gecko.poke(0x39737DA4, 0x42566F69);
-                    Gecko.poke(0x39737DB4, 0x616C4256);
-                    Gecko.poke(0x39737DC8, 0x42566F69);
-                }
+                Gecko.poke(0x39737C94, 0x616C4256);
+                Gecko.poke(0x39737CA8, 0x616C4256);
+                Gecko.poke(0x39737CBC, 0x616C4256);
+                Gecko.poke(0x39737CD0, 0x616C4256);
+                Gecko.poke(0x39737CE4, 0x76616C42);
+                Gecko.poke(0x39737CFC, 0x42566F69);
+                Gecko.poke(0x39737D20, 0x76616C42);
+                Gecko.poke(0x39737D34, 0x6C42566F);
+                Gecko.poke(0x39737D44, 0x76616C42);
+                Gecko.poke(0x39737D58, 0x6C42566F);
+                Gecko.poke(0x39737D68, 0x76616C42);
+                Gecko.poke(0x39737D7C, 0x616C4256);
+                Gecko.poke(0x39737D90, 0x6C42566F);
+                Gecko.poke(0x39737DA4, 0x42566F69);
+                Gecko.poke(0x39737DB4, 0x616C4256);
+                Gecko.poke(0x39737DC8, 0x42566F69);
             }
         }
 

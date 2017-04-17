@@ -23,7 +23,7 @@ namespace Octoslots
             }
             else
             {
-                using (FileStream stream = File.OpenRead("Configuration.xml"))
+                using (FileStream stream = File.OpenRead("OctoslotsConfig.xml"))
                 {
                     currentConfig = (Configuration)serializer.Deserialize(stream);
                 }
@@ -33,7 +33,7 @@ namespace Octoslots
         public static void Save()
         {
             File.Delete("Configuration.xml");
-            using (FileStream writer = File.OpenWrite("Configuration.xml"))
+            using (FileStream writer = File.OpenWrite("OctoslotsConfig.xml"))
             {
                 serializer.Serialize(writer, currentConfig);
             }

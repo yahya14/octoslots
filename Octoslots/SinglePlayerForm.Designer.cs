@@ -510,6 +510,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SinglePlayerForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SinglePlayerForm_FormClosing);
+            this.Load += new System.EventHandler(this.SinglePlayerForm_Load);
             this.OctogroupBox.ResumeLayout(false);
             this.tabGearAndWeapons.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

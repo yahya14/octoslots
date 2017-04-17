@@ -23,6 +23,10 @@ namespace Octoslots
         {
             InitializeComponent();
             Gecko = Main.Gecko;
+        }
+
+        private void SinglePlayerForm_Load(object sender, EventArgs e)
+        {
             SPPoke = true;
 
             //loads combo boxes upon opening
@@ -53,7 +57,6 @@ namespace Octoslots
 
         private void SinglePlayerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            tabGearAndWeapons.Enabled = false;
             SPPoke = false;
         }
 

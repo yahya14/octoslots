@@ -693,6 +693,39 @@
   <data name="&gt;&gt;mainPlayerPokeCheck.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="sfxCombineRadio.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="sfxCombineRadio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sfxCombineRadio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 112</value>
+  </data>
+  <data name="sfxCombineRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="sfxCombineRadio.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="sfxCombineRadio.Text" xml:space="preserve">
+    <value>Combine sfx</value>
+  </data>
+  <data name="sfxCombineRadio.ToolTip" xml:space="preserve">
+    <value>May crash the game</value>
+  </data>
+  <data name="&gt;&gt;sfxCombineRadio.Name" xml:space="preserve">
+    <value>sfxCombineRadio</value>
+  </data>
+  <data name="&gt;&gt;sfxCombineRadio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sfxCombineRadio.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sfxCombineRadio.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
   <data name="toggleGenderButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -779,39 +812,6 @@
   </data>
   <data name="&gt;&gt;sfxEliteRadio.ZOrder" xml:space="preserve">
     <value>22</value>
-  </data>
-  <data name="sfxCombineRadio.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="sfxCombineRadio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="sfxCombineRadio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 112</value>
-  </data>
-  <data name="sfxCombineRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
-  </data>
-  <data name="sfxCombineRadio.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="sfxCombineRadio.Text" xml:space="preserve">
-    <value>Combine sfx</value>
-  </data>
-  <data name="sfxCombineRadio.ToolTip" xml:space="preserve">
-    <value>May crash the game</value>
-  </data>
-  <data name="&gt;&gt;sfxCombineRadio.Name" xml:space="preserve">
-    <value>sfxCombineRadio</value>
-  </data>
-  <data name="&gt;&gt;sfxCombineRadio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sfxCombineRadio.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;sfxCombineRadio.ZOrder" xml:space="preserve">
-    <value>21</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>269, 16</value>

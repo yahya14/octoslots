@@ -51,10 +51,10 @@
             this.modeLabel = new System.Windows.Forms.Label();
             this.toolTipP1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainPlayerPokeCheck = new System.Windows.Forms.CheckBox();
+            this.sfxCombineRadio = new System.Windows.Forms.RadioButton();
             this.toggleGenderButton = new System.Windows.Forms.Button();
             this.sfxNormalRadio = new System.Windows.Forms.RadioButton();
             this.sfxEliteRadio = new System.Windows.Forms.RadioButton();
-            this.sfxCombineRadio = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicBox)).BeginInit();
@@ -133,6 +133,7 @@
             this.checkBoxP1.Name = "checkBoxP1";
             this.toolTipP1.SetToolTip(this.checkBoxP1, resources.GetString("checkBoxP1.ToolTip"));
             this.checkBoxP1.UseVisualStyleBackColor = false;
+            this.checkBoxP1.CheckedChanged += new System.EventHandler(this.checkBoxP1_CheckedChanged);
             this.checkBoxP1.TextChanged += new System.EventHandler(this.checkBoxAllPlayers_TextChanged);
             // 
             // checkBoxP2
@@ -219,6 +220,13 @@
             this.mainPlayerPokeCheck.UseVisualStyleBackColor = true;
             this.mainPlayerPokeCheck.CheckedChanged += new System.EventHandler(this.mainPlayerPokeCheck_CheckedChanged);
             // 
+            // sfxCombineRadio
+            // 
+            resources.ApplyResources(this.sfxCombineRadio, "sfxCombineRadio");
+            this.sfxCombineRadio.Name = "sfxCombineRadio";
+            this.toolTipP1.SetToolTip(this.sfxCombineRadio, resources.GetString("sfxCombineRadio.ToolTip"));
+            this.sfxCombineRadio.UseVisualStyleBackColor = true;
+            // 
             // toggleGenderButton
             // 
             resources.ApplyResources(this.toggleGenderButton, "toggleGenderButton");
@@ -240,13 +248,6 @@
             this.sfxEliteRadio.Name = "sfxEliteRadio";
             this.sfxEliteRadio.UseVisualStyleBackColor = true;
             this.sfxEliteRadio.CheckedChanged += new System.EventHandler(this.sfxEliteRadio_CheckedChanged);
-            // 
-            // sfxCombineRadio
-            // 
-            resources.ApplyResources(this.sfxCombineRadio, "sfxCombineRadio");
-            this.sfxCombineRadio.Name = "sfxCombineRadio";
-            this.toolTipP1.SetToolTip(this.sfxCombineRadio, resources.GetString("sfxCombineRadio.ToolTip"));
-            this.sfxCombineRadio.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
