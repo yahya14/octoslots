@@ -318,7 +318,7 @@ namespace Octoslots
 
         private void menuOctohax()
         {
-            if (/*mainPlayerPokeCheck.Checked ||*/ autoRefresh[0] || autoRefresh[1])
+            if (mainPlayerPokeCheck.Checked || autoRefresh[0] || autoRefresh[1])
             {
                 //fast menu check
                 menuCheck[0] = Gecko.peek(0x106E093C);
@@ -377,7 +377,7 @@ namespace Octoslots
                     nameDump(FestAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Turf/Ranked Battle")
                     nameDump(OnlineAddr, 0x460, 0x9C);
-                else if (modeComboBox.Text == "Classic Offsets") //Offset names within range of 0x12.
+                else if (modeComboBox.Text == "Classic (slow)") //Offset names within range of 0x12.
                     nameDump(0x12D1F32E + diff, 0x704, 0xFC);
             }
             else
@@ -395,7 +395,7 @@ namespace Octoslots
                     using (MemoryStream Player = new MemoryStream())
                     {
                         //dumps data from memory
-                        Gecko.Dump(address + (i * nameOffset), address + (i * nameOffset) + 0x18, Player);
+                        Gecko.Dump(address + (i * nameOffset), address + (i * nameOffset) + 0x1A, Player);
 
                         //define dump to byte array
                         Player.Seek(0, SeekOrigin.Begin);
@@ -439,7 +439,7 @@ namespace Octoslots
                 changeNames();
 
             //set no loop delay with every successful read (except the 0x12 range)
-            if (modeComboBox.Text == "Classic Offsets")
+            if (modeComboBox.Text == "Classic (slow)")
                 delayRead = 0;
             else if (canName)
                 delayRead = 1337;
@@ -457,7 +457,7 @@ namespace Octoslots
                 check = false;
 
             //the 0x12 range doesn't need checks, so the check always stays true if it's selected
-            if (modeComboBox.Text == "Classic Offsets")
+            if (modeComboBox.Text == "Classic (slow)")
                 check = true;
 
             //returns the bool value depending on the bool for checking
@@ -467,7 +467,7 @@ namespace Octoslots
         //CHANGE GUI NAMES
         private void changeNames()
         {
-            if (modeComboBox.Text != "Classic Offsets") //prevents the first player slot to be change in Classic mode, until one of the names have changed
+            if (modeComboBox.Text != "Classic (slow)") //prevents the first player slot to be change in Classic mode, until one of the names have changed
             {
                 checkBoxP1.Text = "  " + Encoding.BigEndianUnicode.GetString(name[0]);
             }

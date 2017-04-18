@@ -607,7 +607,7 @@
     <value>Private Battle</value>
   </data>
   <data name="modeComboBox.Items3" xml:space="preserve">
-    <value>Classic Offsets</value>
+    <value>Classic (slow)</value>
   </data>
   <data name="modeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 71</value>
