@@ -142,11 +142,7 @@ namespace Octoslots
             {
                 uint diff = octodiff = JRAddr - 0x12CDADA0;
                 uint diff2 = Gecko.peek(0x106EA828) - 0x332C1100;
-
-                //if the uint becomes negative
-                if (diff2 > 0x80000000)
-                    diff2 = (0xFFFFFFFF - diff2) + 1;
-
+               
                 //base addresses
                 SquadAddr = 0x1D9B1C2C + diff;
                 PBAddr = 0x1D9B2264 + diff;
@@ -322,23 +318,30 @@ namespace Octoslots
 
         private void menuOctohax()
         {
-            if (mainPlayerPokeCheck.Checked || autoRefresh[0] || autoRefresh[1])
+            if (/*mainPlayerPokeCheck.Checked ||*/ autoRefresh[0] || autoRefresh[1])
             {
-                //checks menu values for octohax
+                //fast menu check
                 menuCheck[0] = Gecko.peek(0x106E093C);
-                menuCheck[1] = Gecko.peek(0x10707EA0);
+
+                //slow menu check
+                if (menuCheck[0] != menuCheck[2])
+                {
+                    menuCheck[1] = Gecko.peek(0x10707EA0);
+                }
+
                 if (((menuCheck[0] == 0 && menuCheck[0] != menuCheck[2]) || (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3])))
                 {
-                    //for activating only when the value changes
-                    menuCheck[2] = menuCheck[0];
-                    menuCheck[3] = menuCheck[1];
+                    if (menuCheck[0] != menuCheck[2] && menuCheck[1] != menuCheck[3])
+                    {
+                        //part of the check step when the check values change
+                        menuCheck[2] = menuCheck[0];
+                        menuCheck[3] = menuCheck[1];
+                    }
 
-                    if (autoRefresh[0] || mainPlayerPokeCheck.Checked)
+                    if (autoRefresh[0])
                     {
                         patchOctohax(1); //pokes safe octohax
                     }
-
-                    autoRefresh[0] = autoRefresh[1] = false;
 
                     //for Battle Dojo (experimental)
                     Gecko.poke(0x12D1F364 + octodiff, 0x00000000); //P1
@@ -346,8 +349,11 @@ namespace Octoslots
                 }
                 else if (menuCheck[0] != menuCheck[2])
                 {
-                    menuCheck[2] = menuCheck[0];
-                    menuCheck[3] = menuCheck[1];
+                    if (menuCheck[0] != menuCheck[2] && (menuCheck[1] != 0x3F800000 && menuCheck[1] != menuCheck[3]))
+                    {
+                        menuCheck[2] = menuCheck[0];
+                        menuCheck[3] = menuCheck[1];
+                    }
 
                     patchOctohax(0); //reverts safe octohax
                 }
@@ -359,21 +365,20 @@ namespace Octoslots
             //delayed timer note: every name validated has no delay, every name failed to validate will have delay based the value of the next line.
             if (delayRead >= 2) //set delay period
             {
-                if (modeComboBox.Text == "Squad Battle") //broken
+                if (modeComboBox.Text == "Squad Battle") //sort of works
                 {
                     nameDump(SquadAddr, 0x460, 0x9C);
                     if (!canName)
                         switchSquadAddr();
                 }
-                else if (modeComboBox.Text == "Private Battle")
+                else if (modeComboBox.Text == "Private Battle") //doesn't work in festool
                     nameDump(PBAddr, 0x460, 0x9C);
-                else if (modeComboBox.Text == "Splatfest Battle") //broken
+                else if (modeComboBox.Text == "Splatfest Battle")
                     nameDump(FestAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Turf/Ranked Battle")
                     nameDump(OnlineAddr, 0x460, 0x9C);
                 else if (modeComboBox.Text == "Classic Offsets") //Offset names within range of 0x12.
                     nameDump(0x12D1F32E + diff, 0x704, 0xFC);
-                //All broken addresses need pointers for it, which I have no possesion of yet.
             }
             else
                 delayRead = delayRead >= 2 ? delayRead : delayRead + 1;
