@@ -595,9 +595,13 @@ namespace Octoslots
 
                     mainNameDelay = 3;
                 }
-               
+
                 if (P1NameChecked.SequenceEqual(miiName))
                     autoRefresh[0] = true;
+
+                //sets it to check immediately if autoRefresh[0] is false and is in the menu
+                if (menuCheck[0] == 0 && autoRefresh[0] == false)
+                    mainNameDelay = 7;
 
                 mainNameDelay = mainNameDelay < 1337 ? mainNameDelay + 1 : mainNameDelay;
             }
